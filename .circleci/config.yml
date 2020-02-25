@@ -46,6 +46,7 @@ workflows:
           filters:
             branches:
               only:
+                - master
                 - develop
 
 jobs:
@@ -95,7 +96,7 @@ jobs:
           name: deploy to remote
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_JSN --password $FTP_PASSWORD_JSN
               curl -X POST -H 'Content-type: application/json' --data '{"text":"JSNation sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
