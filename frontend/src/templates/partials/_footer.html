@@ -3,11 +3,11 @@
 		<h3 class="section__title">Follow us</h3>
 		<div class="footer__socials">
 			<ul class="social social--theme">
-				<li class="social__item"><a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('tw')}}</a></li>
-				<li class="social__item"><a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a></li>
-				<li class="social__item"><a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('yt')}}</a></li>
-				<li class="social__item"><a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('med')}}</a></li>
-				<li class="social__item"><a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a></li>
+				{% if info.twitterUrl %}<li class="social__item"><a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('tw')}}</a></li>{% endif %}
+				{% if info.facebookUrl %}<li class="social__item"><a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a></li>{% endif %}
+				{% if info.youtubeUrl %}<li class="social__item"><a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('yt')}}</a></li>{% endif %}
+				{% if info.mediumUrl %}<li class="social__item"><a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('med')}}</a></li>{% endif %}
+				{% if info.slackUrl %}<li class="social__item"><a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a></li>{% endif %}
 			</ul>
 		</div>
 	</div>

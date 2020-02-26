@@ -49,6 +49,13 @@ workflows:
                 - master
                 - develop
 
+      - NodeDayUK:
+          requires: *deps
+          filters:
+            branches:
+              only:
+                - develop
+
 jobs:
   "Dependencies":
     docker:
@@ -101,4 +108,27 @@ jobs:
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
               cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_JSN --password $FTP_PASSWORD_DEV_JSN
+            fi
+
+  NodeDayUK:
+    docker:
+      - image: circleci/node:10
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: build website
+          command: ls && cd frontend && BRAND_NAME=NodeDayUK yarn build
+
+      - run:
+          name: deploy to remote
+          command: |
+            if [ $CIRCLE_BRANCH = "master" ]; then
+              cd frontend && BRAND_NAME=NodeDayUK ./node_modules/.bin/gulp deploy --user $FTP_USER_NODEDAY --password $FTP_PASSWORD_NODEDAY
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"NodeDayUK sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
+            fi
+            if [ $CIRCLE_BRANCH = "develop" ]; then
+              cd frontend && BRAND_NAME=NodeDayUK ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_NODEDAY --password $FTP_PASSWORD_DEV_NODEDAY
             fi
