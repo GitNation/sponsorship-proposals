@@ -51,8 +51,9 @@ $(function() {
 			"share",
 			"slideShow",
 			"thumbs",
-			"close"
+			"close",
 		],
+    touch: false
 	});
 
 	/*---------------------------------------------------*/
@@ -68,6 +69,7 @@ $(function() {
 		startPosition: 'URLHash',
 		dots: true,
 		dotsData: true,
+		autoHeight:true,
 		dotsContainer: '#packages-switch'
 	});
 
@@ -274,7 +276,7 @@ $(function() {
 			}
 		}
 	}
-	
+
 	/*---------------------------------------------------*/
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
