@@ -51,8 +51,9 @@ $(function() {
 			"share",
 			"slideShow",
 			"thumbs",
-			"close"
+			"close",
 		],
+    touch: false
 	});
 
 	/*---------------------------------------------------*/
@@ -275,7 +276,7 @@ $(function() {
 			}
 		}
 	}
-	
+
 	/*---------------------------------------------------*/
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
