@@ -7,7 +7,7 @@ command = "BRAND_NAME=JSNationLive yarn build"
 
 [[redirects]]
   from = "/"
-  to = "/jsnationlive"
+  to = "/jsnationlive/"
   status = 302
   force = true
   headers = {X-From = "Netlify"}
