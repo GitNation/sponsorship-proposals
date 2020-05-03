@@ -7,6 +7,7 @@ if (!process.env.SANITY_ENDPOINT || !process.env.SANITY_TOKEN) {
 const brandIDs = {
   reactSummit: '8224681e-d99e-45f5-8dfe-14a916a952e9',
   JSNation: 'nt8f6wsK8Ivu113FajImcZ',
+  JSNationLive: 'O9I27fZboumean9j8TzJit',
   NodeDayUK: 'cmVu3wsUMKKWfaawlUP3gY',
   reactAdvanced: '',
   reactDayBerlin: '',
