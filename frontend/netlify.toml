@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/"
+  to = "/jsnationlive"
+  status = 302
+  force = true
+  headers = {X-From = "Netlify"}

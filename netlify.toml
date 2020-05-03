@@ -4,10 +4,3 @@ publish = "build"
 command = "BRAND_NAME=JSNationLive yarn build"
 
 # command = "BRAND_NAME=reactSummit yarn build && BRAND_NAME=JSNation yarn build && BRAND_NAME=NodeDayUK yarn build && BRAND_NAME=JSNationLive yarn build"
-
-[[redirects]]
-  from = "/"
-  to = "/jsnationlive"
-  status = 302
-  force = true
-  headers = {X-From = "Netlify"}
