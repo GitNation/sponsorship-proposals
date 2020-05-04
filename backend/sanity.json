@@ -14,12 +14,18 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "datatable",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "@sanity/dashboard",
+    "dashboard-widget-netlify"
   ],
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./src/dashboardConfig.js"
     }
   ]
 }
