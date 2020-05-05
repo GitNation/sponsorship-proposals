@@ -30,6 +30,7 @@ aliases:
           root: .
           paths:
             - frontend
+            - netlify.toml
 
 version: 2
 
@@ -158,7 +159,7 @@ jobs:
 
       - run:
           name: prepare redirects
-          command: cd frontend && ls && cp _redirects build/
+          command: ls && cd frontend && ls && cp _redirects build/
 
       - run:
           name: deploy to netlify
@@ -193,7 +194,11 @@ jobs:
 
       - run:
           name: build all brands
-          command: cd frontend && BRAND_NAME=JSNation yarn build && BRAND_NAME=JSNationLive yarn build && BRAND_NAME=reactSummit yarn build && BRAND_NAME=NodeDayUK yarn build
+          command: cd frontend && yarn concurrently "BRAND_NAME=JSNation yarn build" "BRAND_NAME=JSNationLive yarn build" "BRAND_NAME=reactSummit yarn build" "BRAND_NAME=NodeDayUK yarn build"
+
+      - run:
+          name: prepare redirects
+          command: cd frontend && ls && cp _redirects build/
 
       - run:
           name: deploy to netlify
