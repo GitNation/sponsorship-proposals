@@ -7,7 +7,7 @@ aliases:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "frontend/package.json" }}
+          - v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
       - run:
           name: install dependencies
@@ -19,7 +19,7 @@ aliases:
       - save_cache:
           paths:
             - frontend/node_modules
-          key: v1-dependencies-{{ checksum "frontend/package.json" }}
+          key: v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
       - persist_to_workspace:
           root: .
@@ -139,6 +139,23 @@ jobs:
 
     steps:
       - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "frontend/yarn.lock" }}
+
+      - run:
+          name: install dependencies
+          command: |
+            if [ ! -d "frontend/node_modules" ]; then
+              cd frontend && yarn install
+            fi
+
+      - save_cache:
+          paths:
+            - frontend/node_modules
+          key: v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
       - run:
           name: build website
