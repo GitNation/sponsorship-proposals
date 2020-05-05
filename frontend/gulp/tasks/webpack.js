@@ -24,7 +24,9 @@ function handler(err, stats, cb) {
         chunks: false
     }));
 
-    server.reload();
+    if (server) {
+      server.reload();
+    }
     if (typeof cb === 'function') cb();
 }
 

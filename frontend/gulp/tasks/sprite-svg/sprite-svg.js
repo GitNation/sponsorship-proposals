@@ -1,12 +1,6 @@
 var gulp        = require('gulp');
 var plumber     = require('gulp-plumber');
-var svgmin      = require('gulp-svgmin');
-var svgStore    = require('gulp-svgstore');
 var svgSprite   = require('gulp-svg-sprite');
-var rename      = require('gulp-rename');
-var cheerio     = require('gulp-cheerio');
-var through2    = require('through2');
-var consolidate = require('gulp-consolidate');
 var config      = require('../../config');
 
 gulp.task('sprite:svg', function () {
