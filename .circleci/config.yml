@@ -1,5 +1,3 @@
-version: 2
-
 aliases:
   - &dependencies
       - checkout
@@ -25,6 +23,8 @@ aliases:
       - run:
           name: build all brands
           command: cd frontend && yarn ci-build-all
+
+version: 2
 
 jobs:
   build:
