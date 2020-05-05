@@ -132,3 +132,20 @@ jobs:
             if [ $CIRCLE_BRANCH = "develop" ]; then
               cd frontend && BRAND_NAME=NodeDayUK ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_NODEDAY --password $FTP_PASSWORD_DEV_NODEDAY
             fi
+
+  allBrands:
+    docker:
+      - image: circleci/node:10
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: build website
+          command: ls && cd frontend && BRAND_NAME=JSNationLive yarn build
+
+      - run:
+          name: deploy to remote
+          command: |
+            echo "Live.JSNation.com build Done!"
