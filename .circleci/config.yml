@@ -29,7 +29,7 @@ commands:
           command: cd frontend && yarn ci-build-all
 
 jobs:
-  build:
+  buildBrandsAndDeployToDev:
     docker:
       - image: circleci/node:10
 
