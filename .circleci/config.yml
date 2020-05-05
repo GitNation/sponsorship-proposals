@@ -163,7 +163,7 @@ jobs:
       - run:
           name: deploy to netlify
           command: |
-            netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_DEV
+            yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_DEV
 
   # This command is being only called directly via API referencing this job
   buildAndDeployAllBrandsToNetlify:
@@ -197,5 +197,5 @@ jobs:
       - run:
           name: deploy to netlify
           command: |
-            netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_PROD
+            yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_PROD
             curl -X POST -H 'Content-type: application/json' --data '{"text":"All sponsor proposals have been updated on production '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
