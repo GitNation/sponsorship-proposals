@@ -1,6 +1,11 @@
 aliases:
   - &deps
       - "Dependencies"
+  - &allSites
+      - "reactSummit"
+      - "JSNation"
+      - "JSNationLive"
+      - "NodeDayUK"
   - &dependencies
       - checkout
 
@@ -39,7 +44,6 @@ workflows:
             branches:
               only:
                 - master
-                - develop
 
       - JSNation:
           requires: *deps
@@ -47,14 +51,27 @@ workflows:
             branches:
               only:
                 - master
-                - develop
+
+      - JSNationLive:
+          requires: *deps
+          filters:
+            branches:
+              only:
+                - master
 
       - NodeDayUK:
           requires: *deps
           filters:
             branches:
               only:
-                - develop
+                - master
+
+      - deployAllBrandsToNetlify:
+          requires: *allSites
+          filters:
+            branches:
+              only:
+                - master
 
 jobs:
   "Dependencies":
@@ -67,25 +84,13 @@ jobs:
     docker:
       - image: circleci/node:10
 
-
     steps:
       - attach_workspace:
           at: .
 
       - run:
           name: build website
-          command: ls&& cd frontend && BRAND_NAME=reactSummit yarn build
-
-      - run:
-          name: deploy to remote
-          command: |
-            if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_RS --password $FTP_PASSWORD_RS
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"React Summit sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
-            fi
-            if [ $CIRCLE_BRANCH = "develop" ]; then
-              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_RS --password $FTP_PASSWORD_DEV_RS
-            fi
+          command: ls && cd frontend && BRAND_NAME=reactSummit yarn build
 
   JSNation:
     docker:
@@ -99,16 +104,17 @@ jobs:
           name: build website
           command: ls && cd frontend && BRAND_NAME=JSNation yarn build
 
+  JSNationLive:
+    docker:
+      - image: circleci/node:10
+
+    steps:
+      - attach_workspace:
+          at: .
+
       - run:
-          name: deploy to remote
-          command: |
-            if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_JSN --password $FTP_PASSWORD_JSN
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"JSNation sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
-            fi
-            if [ $CIRCLE_BRANCH = "develop" ]; then
-              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_JSN --password $FTP_PASSWORD_DEV_JSN
-            fi
+          name: build website
+          command: ls && cd frontend && BRAND_NAME=JSNationLive yarn build
 
   NodeDayUK:
     docker:
@@ -122,18 +128,25 @@ jobs:
           name: build website
           command: ls && cd frontend && BRAND_NAME=NodeDayUK yarn build
 
-      - run:
-          name: deploy to remote
-          command: |
-            if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && BRAND_NAME=NodeDayUK ./node_modules/.bin/gulp deploy --user $FTP_USER_NODEDAY --password $FTP_PASSWORD_NODEDAY
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"NodeDayUK sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
-            fi
-            if [ $CIRCLE_BRANCH = "develop" ]; then
-              cd frontend && BRAND_NAME=NodeDayUK ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_NODEDAY --password $FTP_PASSWORD_DEV_NODEDAY
-            fi
+  deployAllBrandsToNetlify:
+    docker:
+      - image: circleci/node:10
 
-  allBrands:
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: prepare redirects
+          command: ls && cd frontend && cp _redirects build/
+
+      - run:
+          name: deploy to netlify
+          command: |
+            netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_DEV
+
+  # This command is being only called directly via API referencing this job
+  buildAndDeployAllBrandsToNetlify:
     docker:
       - image: circleci/node:10
 
@@ -158,10 +171,11 @@ jobs:
           key: v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
       - run:
-          name: build website
-          command: ls && cd frontend && BRAND_NAME=JSNationLive yarn build
+          name: build all brands
+          command: ls && cd frontend && BRAND_NAME=JSNation yarn build && BRAND_NAME=JSNationLive yarn build && BRAND_NAME=reactSummit yarn build && BRAND_NAME=NodeDayUK yarn build
 
       - run:
-          name: deploy to remote
+          name: deploy to netlify
           command: |
-            echo "Live.JSNation.com build Done!"
+            netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_PROD
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"All sponsor proposals have been updated on production '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
