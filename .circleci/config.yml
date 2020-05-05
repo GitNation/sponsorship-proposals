@@ -90,7 +90,7 @@ jobs:
 
       - run:
           name: build website
-          command: ls && cd frontend && BRAND_NAME=reactSummit yarn build
+          command: cd frontend && BRAND_NAME=reactSummit yarn build
 
       - persist_to_workspace:
           root: .
@@ -107,7 +107,7 @@ jobs:
 
       - run:
           name: build website
-          command: ls && cd frontend && BRAND_NAME=JSNation yarn build
+          command: cd frontend && BRAND_NAME=JSNation yarn build
 
       - persist_to_workspace:
           root: .
@@ -124,7 +124,7 @@ jobs:
 
       - run:
           name: build website
-          command: ls && cd frontend && BRAND_NAME=JSNationLive yarn build
+          command: cd frontend && BRAND_NAME=JSNationLive yarn build
 
       - persist_to_workspace:
           root: .
@@ -141,7 +141,7 @@ jobs:
 
       - run:
           name: build website
-          command: ls && cd frontend && BRAND_NAME=NodeDayUK yarn build
+          command: cd frontend && BRAND_NAME=NodeDayUK yarn build
 
       - persist_to_workspace:
           root: .
@@ -158,11 +158,12 @@ jobs:
 
       - run:
           name: prepare redirects
-          command: ls && cd frontend && ls && ls build && cp _redirects build/
+          command: cd frontend && ls && cp _redirects build/
 
       - run:
           name: deploy to netlify
           command: |
+            cd frontend
             yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_DEV
 
   # This command is being only called directly via API referencing this job
@@ -192,10 +193,11 @@ jobs:
 
       - run:
           name: build all brands
-          command: ls && cd frontend && BRAND_NAME=JSNation yarn build && BRAND_NAME=JSNationLive yarn build && BRAND_NAME=reactSummit yarn build && BRAND_NAME=NodeDayUK yarn build
+          command: cd frontend && BRAND_NAME=JSNation yarn build && BRAND_NAME=JSNationLive yarn build && BRAND_NAME=reactSummit yarn build && BRAND_NAME=NodeDayUK yarn build
 
       - run:
           name: deploy to netlify
           command: |
+            cd frontend
             yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_PROD
             curl -X POST -H 'Content-type: application/json' --data '{"text":"All sponsor proposals have been updated on production '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
