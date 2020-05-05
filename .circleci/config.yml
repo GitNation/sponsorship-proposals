@@ -1,5 +1,8 @@
-aliases:
-  - &dependencies
+version: 2.1
+
+commands:
+  dependencies:
+    steps:
       - checkout
 
       # Download and cache dependencies
@@ -19,12 +22,11 @@ aliases:
             - frontend/node_modules
           key: v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
-  - &buildAllBrands
+  build-all-brands:
+    steps:
       - run:
           name: build all brands
           command: cd frontend && yarn ci-build-all
-
-version: 2
 
 jobs:
   build:
@@ -32,8 +34,8 @@ jobs:
       - image: circleci/node:10
 
     steps:
-      - *dependencies
-      - *buildAllBrands
+      - dependencies
+      - build-all-brands
       - run:
           name: deploy to netlify
           command: |
@@ -46,8 +48,8 @@ jobs:
       - image: circleci/node:10
 
     steps:
-      - *dependencies
-      - *buildAllBrands
+      - dependencies
+      - build-all-brands
       - run:
           name: deploy to netlify
           command: |
