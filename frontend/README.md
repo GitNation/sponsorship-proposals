@@ -5,8 +5,16 @@
 Clone this repo and then in command line type:
 
 * `npm install` or `yarn` - install all dependencies
-* `yarn` - run dev-server and let magic happen, or
+* `yarn start` - run dev-server and let magic happen, or
 * `yarn build` - build project from sources
+
+### Preparing env variables
+
+Copy `_env` to `.env` and enter locally Sanity token and API key to be able building the project.
+
+### Building separate brands and setting up variables
+
+One of the env variables is `BRAND_NAME` which defines for which brand the app pull settings from Sanity. On CI we build all brands at the same time, while locally you have to set up `.env` with target brand for dev mode.
 
 --
 
@@ -49,7 +57,8 @@ We have several useful flags.
 * `gulp --tunnel=[name]` or `gulp server --tunnel [name]` - runs dev server and allows you to easily share a web service on your local development machine (powered by [localtunnel.me](https://localtunnel.me/)). Your local site will be available at `[name].localtunnel.me`.
 * `gulp [task_name] --prod` or `gulp [task_name] --production` - run task in production mode. Some of the tasks (like, sass or js compilation) have additional settings for production mode (such as code minification), so with this flag you can force production mode. `gulp build` uses this mode by default.
 
-##Other
+## Other
+
 You can also use [npm scripts](https://docs.npmjs.com/misc/scripts):
 
 * `npm run start` - same as `gulp default`.
