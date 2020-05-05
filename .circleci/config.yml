@@ -14,7 +14,7 @@ commands:
           name: install dependencies
           command: |
             if [ ! -d "frontend/node_modules" ]; then
-              cd frontend && yarn install
+              cd frontend && yarn install --production
             fi
 
       - save_cache:
