@@ -5,6 +5,9 @@
     "build": "gulp build --production",
     "start": "gulp",
     "disabled_precommit": "lint-staged",
+    "build-all-brands": "concurrently 'BRAND_NAME=JSNation yarn build' 'BRAND_NAME=JSNationLive yarn build' 'BRAND_NAME=reactSummit yarn build' 'BRAND_NAME=NodeDayUK yarn build'",
+    "build-redirects": "cp _redirects build/",
+    "ci-build-all": "yarn build-all-brands && yarn build-redirects",
     "lint": "eslint --ignore-pattern 'src/js/lib/' --cache --format=node_modules/eslint-formatter-pretty src/js/",
     "lint-fix": "npm run lint -- --fix"
   },

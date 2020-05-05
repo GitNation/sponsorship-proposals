@@ -1,4 +1,4 @@
 [build]
 base = "frontend/"
 publish = "build"
-command = "yarn concurrently "BRAND_NAME=JSNation yarn build" "BRAND_NAME=JSNationLive yarn build" "BRAND_NAME=reactSummit yarn build" "BRAND_NAME=NodeDayUK yarn build" && cp _redirects build/"
+command = "yarn ci-build-all"

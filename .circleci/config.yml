@@ -1,11 +1,6 @@
+version: 2
+
 aliases:
-  - &deps
-      - "Dependencies"
-  - &allSites
-      - "reactSummit"
-      - "JSNation"
-      - "JSNationLive"
-      - "NodeDayUK"
   - &dependencies
       - checkout
 
@@ -26,180 +21,33 @@ aliases:
             - frontend/node_modules
           key: v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
-      - persist_to_workspace:
-          root: .
-          paths:
-            - frontend
-            - netlify.toml
-
-version: 2
-
-workflows:
-  version: 2
-  buildBrands:
-    jobs:
-      - "Dependencies"
-      - reactSummit:
-          requires: *deps
-          filters:
-            branches:
-              only:
-                - master
-
-      - JSNation:
-          requires: *deps
-          filters:
-            branches:
-              only:
-                - master
-
-      - JSNationLive:
-          requires: *deps
-          filters:
-            branches:
-              only:
-                - master
-
-      - NodeDayUK:
-          requires: *deps
-          filters:
-            branches:
-              only:
-                - master
-
-      - deployAllBrandsToNetlify:
-          requires: *allSites
-          filters:
-            branches:
-              only:
-                - master
+  - &buildAllBrands
+      - run:
+          name: build all brands
+          command: cd frontend && yarn ci-build-all
 
 jobs:
-  "Dependencies":
-    docker:
-      - image: circleci/node:10
-
-    steps: *dependencies
-
-  reactSummit:
+  build:
     docker:
       - image: circleci/node:10
 
     steps:
-      - attach_workspace:
-          at: .
-
-      - run:
-          name: build website
-          command: cd frontend && BRAND_NAME=reactSummit yarn build
-
-      - persist_to_workspace:
-          root: .
-          paths:
-            - frontend/build/reactSummit
-
-  JSNation:
-    docker:
-      - image: circleci/node:10
-
-    steps:
-      - attach_workspace:
-          at: .
-
-      - run:
-          name: build website
-          command: cd frontend && BRAND_NAME=JSNation yarn build
-
-      - persist_to_workspace:
-          root: .
-          paths:
-            - frontend/build/JSNation
-
-  JSNationLive:
-    docker:
-      - image: circleci/node:10
-
-    steps:
-      - attach_workspace:
-          at: .
-
-      - run:
-          name: build website
-          command: cd frontend && BRAND_NAME=JSNationLive yarn build
-
-      - persist_to_workspace:
-          root: .
-          paths:
-            - frontend/build/JSNationLive
-
-  NodeDayUK:
-    docker:
-      - image: circleci/node:10
-
-    steps:
-      - attach_workspace:
-          at: .
-
-      - run:
-          name: build website
-          command: cd frontend && BRAND_NAME=NodeDayUK yarn build
-
-      - persist_to_workspace:
-          root: .
-          paths:
-            - frontend/build/NodeDayUK
-
-  deployAllBrandsToNetlify:
-    docker:
-      - image: circleci/node:10
-
-    steps:
-      - attach_workspace:
-          at: .
-
-      - run:
-          name: prepare redirects
-          command: ls && cd frontend && ls && cp _redirects build/
-
+      - *dependencies
+      - *buildAllBrands
       - run:
           name: deploy to netlify
           command: |
             cd frontend
             yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --prod --site $NETLIFY_SITE_DEV
 
-  # This command is being only called directly via API referencing this job
-  buildAndDeployAllBrandsToNetlify:
+  # This command is being only called directly via API referencing this job to manually trigger production deploy to Netlify
+  buildBrandsAndDeployToProd:
     docker:
       - image: circleci/node:10
 
     steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "frontend/yarn.lock" }}
-
-      - run:
-          name: install dependencies
-          command: |
-            if [ ! -d "frontend/node_modules" ]; then
-              cd frontend && yarn install
-            fi
-
-      - save_cache:
-          paths:
-            - frontend/node_modules
-          key: v1-dependencies-{{ checksum "frontend/yarn.lock" }}
-
-      - run:
-          name: build all brands
-          command: cd frontend && yarn concurrently "BRAND_NAME=JSNation yarn build" "BRAND_NAME=JSNationLive yarn build" "BRAND_NAME=reactSummit yarn build" "BRAND_NAME=NodeDayUK yarn build"
-
-      - run:
-          name: prepare redirects
-          command: cd frontend && ls && cp _redirects build/
-
+      - *dependencies
+      - *buildAllBrands
       - run:
           name: deploy to netlify
           command: |
