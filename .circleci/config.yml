@@ -138,8 +138,7 @@ jobs:
       - image: circleci/node:10
 
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
 
       - run:
           name: build website
