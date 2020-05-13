@@ -281,7 +281,7 @@ export default {
     },
     // partners
     {
-      title: "Partners",
+      title: "Partner testimonials",
       name: "partnerSlides",
       fieldset: "partners",
       type: "array",

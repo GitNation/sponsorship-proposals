@@ -47,6 +47,7 @@
 			</div>
 		</div>
 
+    {% if packageSlides %}
 		<div class="owl-carousel packages-slider slider">
 			{% for item in packageSlides %}
 			<div class="packages-slider__item">
@@ -57,6 +58,7 @@
 			</div>
 			{% endfor %}
 		</div>
+    {% endif %}
 	</div>
 </section>
 
