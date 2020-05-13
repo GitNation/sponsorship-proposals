@@ -10,6 +10,7 @@ const queryPages = /* GraphQL */ `
         }
         title
         value
+        description
       }
     }
   }
@@ -22,9 +23,10 @@ const fetchData = async(client, vars) => {
 
   const { animDelay } = data;
 
-  const tales = data.tales.map(({ image, title, value }, ind) => ({
+  const tales = data.tales.map(({ image, title, value, description }, ind) => ({
     title,
     nums: value,
+    description,
     animDelay,
     img: getUrl(image),
     animation: !(ind % 2) ? 'fade-up' : 'fade-down',

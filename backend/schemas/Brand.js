@@ -255,7 +255,7 @@ export default {
       fieldset: "tiles",
     },
     {
-      title: "Stats Tales",
+      title: "Stat Tiles",
       name: "tales",
       fieldset: "tiles",
       type: "array",
