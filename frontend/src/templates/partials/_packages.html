@@ -47,17 +47,17 @@
 			</div>
 		</div>
 
-    {% if Object.keys(packageSlides).length %}
-		<div class="owl-carousel packages-slider slider">
-			{% for item in packageSlides %}
-			<div class="packages-slider__item">
-				<div class="packages-slider__wrap">
-					<img class="packages-slider__pic" src="{{item.image.asset.url}}">
-					<p class="packages-slider__title">{{item.caption}}</p>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
+    {% if packageSlides|length %}
+      <div class="owl-carousel packages-slider slider">
+        {% for item in packageSlides %}
+        <div class="packages-slider__item">
+          <div class="packages-slider__wrap">
+            <img class="packages-slider__pic" src="{{item.image.asset.url}}">
+            <p class="packages-slider__title">{{item.caption}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     {% endif %}
 	</div>
 </section>
