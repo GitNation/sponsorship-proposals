@@ -1,8 +1,13 @@
 export default {
   name: "addon",
-  title: "Package Addon",
+  title: "Package Addons",
   type: "document",
   fields: [
+    {
+      name: "name",
+      title: "Name",
+      type: "string",
+    },
     {
       name: "title",
       title: "Title",
@@ -29,4 +34,11 @@ export default {
       type: "image",
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'image',
+      subtitle: 'title'
+    }
+  }
 };

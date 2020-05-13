@@ -34,8 +34,8 @@ export default {
       options: { collapsible: true, collapsed: true },
     },
     {
-      name: "sponsors",
-      title: "Sponsors Block",
+      name: "decorations",
+      title: "Decorations (video, slider)",
       options: { collapsible: true, collapsed: true },
     },
     {
@@ -50,6 +50,11 @@ export default {
     },
   ],
   fields: [
+    {
+      name: "name",
+      title: "Name",
+      type: "string",
+    },
     // main
     {
       name: "pageTitle",
@@ -108,33 +113,15 @@ export default {
       hidden: true,
     },
     {
-      name: "mainUrl",
-      title: "Main site",
-      type: "url",
-      fieldset: "main",
-    },
-    {
-      name: "sponsorsUrl",
-      title: "Sponsorship url",
-      type: "url",
-      fieldset: "main",
-    },
-    {
-      name: "gaugesTrackingId",
-      title: "Gauges Tracking ID",
-      type: "string",
-      fieldset: "main",
-    },
-    {
-      name: "googleTrackingId",
-      title: "Google Analytics Tracking ID",
-      type: "string",
-      fieldset: "main",
-    },
-    {
       title: "OG Image",
       name: "ogImage",
       type: "image",
+      fieldset: "main",
+    },
+    {
+      title: "Custom contact URL (instead of mailto)",
+      name: "contactUrl",
+      type: "url",
       fieldset: "main",
     },
     // info
@@ -180,9 +167,27 @@ export default {
       fieldset: "info",
     },
     {
-      title: "Custom contact URL (instead of mailto)",
-      name: "contactUrl",
+      name: "mainUrl",
+      title: "Main site",
       type: "url",
+      fieldset: "info",
+    },
+    {
+      name: "sponsorsUrl",
+      title: "Sponsorship url",
+      type: "url",
+      fieldset: "info",
+    },
+    {
+      name: "gaugesTrackingId",
+      title: "Gauges Tracking ID",
+      type: "string",
+      fieldset: "info",
+    },
+    {
+      name: "googleTrackingId",
+      title: "Google Analytics Tracking ID",
+      type: "string",
       fieldset: "info",
     },
     // intro
@@ -274,17 +279,6 @@ export default {
         },
       ],
     },
-    {
-      title: "Slides",
-      name: "packageSlides",
-      fieldset: "packages",
-      type: "array",
-      of: [
-        {
-          type: "packageSlide",
-        },
-      ],
-    },
     // partners
     {
       title: "Partners",
@@ -298,11 +292,10 @@ export default {
         },
       ],
     },
-    // sponsors
     {
       title: "Sponsors",
       name: "sponsors",
-      fieldset: "sponsors",
+      fieldset: "partners",
       type: "array",
       of: [
         {
@@ -311,11 +304,23 @@ export default {
         },
       ],
     },
+    // decorations
     {
       title: "Youtube Video",
       name: "youtube",
       type: "url",
-      fieldset: "sponsors",
+      fieldset: "decorations",
+    },
+    {
+      title: "Slides",
+      name: "packageSlides",
+      fieldset: "decorations",
+      type: "array",
+      of: [
+        {
+          type: "packageSlide",
+        },
+      ],
     },
   ],
 

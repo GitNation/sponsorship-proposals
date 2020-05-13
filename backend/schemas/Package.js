@@ -1,6 +1,6 @@
 export default {
   name: "package",
-  title: "Package",
+  title: "Packages",
   type: "document",
   fieldsets: [
     {
@@ -15,6 +15,11 @@ export default {
     },
   ],
   fields: [
+    {
+      name: "name",
+      title: "Name",
+      type: "string",
+    },
     {
       name: "title",
       title: "Title",
@@ -183,4 +188,11 @@ export default {
     //   type: "image",
     // },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'blockImage',
+      subtitle: 'title'
+    }
+  }
 };

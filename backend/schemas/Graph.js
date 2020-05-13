@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Name",
       type: "string",
     },
     {
@@ -25,4 +25,10 @@ export default {
       type: "table",
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'tabTitle'
+    }
+  }
 };

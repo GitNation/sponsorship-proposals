@@ -1,7 +1,7 @@
 export const Sponsor = {
   type: "document",
   name: "sponsor",
-  title: "Sponsor",
+  title: "Sponsors",
   fields: [
     {
       name: "image",
@@ -38,8 +38,13 @@ export const Sponsor = {
 export const PartnerSlide = {
   type: "document",
   name: "partnerSlide",
-  title: "Partner Slide",
+  title: "Partner testimonials",
   fields: [
+    {
+      name: "title",
+      type: "string",
+      title: "Name",
+    },
     {
       name: "image",
       type: "image",
@@ -48,7 +53,7 @@ export const PartnerSlide = {
     {
       name: "name",
       type: "string",
-      title: "Name",
+      title: "Person name",
       options: {
         isHighlighted: true, // <-- make this field easily accessible
       },
@@ -56,7 +61,7 @@ export const PartnerSlide = {
     {
       name: "job",
       type: "string",
-      title: "Job",
+      title: "Position",
       options: {
         isHighlighted: true, // <-- make this field easily accessible
       },
@@ -70,6 +75,13 @@ export const PartnerSlide = {
       },
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image',
+      subtitle: 'name'
+    }
+  }
 };
 
 export const PackageSlide = {
@@ -91,4 +103,10 @@ export const PackageSlide = {
       },
     },
   ],
+  preview: {
+    select: {
+      title: 'caption',
+      media: 'image'
+    }
+  }
 };
