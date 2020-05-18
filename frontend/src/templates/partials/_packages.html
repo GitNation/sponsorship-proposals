@@ -2,10 +2,12 @@
 	<div class="container tab-wrap">
 		<h3 class="section__title">Sponsors packages and addons
 
-			<div class="packages-switch owl-dots" id="packages-switch">
-				<div class="packages-switch__item owl-dot" data-slide="0">Grid</div>
-				<div class="packages-switch__item owl-dot" data-slide="1">Table</div>
-			</div>
+      {% if packagesTable|length %}
+        <div class="packages-switch owl-dots" id="packages-switch">
+          <div class="packages-switch__item owl-dot" data-slide="0">Grid</div>
+          <div class="packages-switch__item owl-dot" data-slide="1">Table</div>
+        </div>
+      {% endif %}
 
 			<!-- <div id="packages-switch"></div> -->
 		</h3>
@@ -24,27 +26,27 @@
 				</ul>
 			</div>
 
-			<div class="package-slider__item" data-hash="package-table">
-				<div class="table-wrapper">
-					<table class="package-table responsive">
-						<tbody>
+      {% if packagesTable|length %}
+        <div class="package-slider__item" data-hash="package-table">
+          <div class="table-wrapper">
+            <table class="package-table responsive">
+              <tbody>
+                {% include "partials/package/_header.html" %}
 
-			            	{% include "partials/package/_header.html" %}
+                {% for feature in packageFeatures %}
+                  {% if feature.type === 'text' %}
+                    {% include "partials/package/_text-row.html" %}
+                  {% endif %}
 
-			            	{% for feature in packageFeatures %}
-			            		{% if feature.type === 'text' %}
-			            			{% include "partials/package/_text-row.html" %}
-			            		{% endif %}
-
-			            		{% if feature.type === 'check' %}
-			            			{% include "partials/package/_check-row.html" %}
-			            		{% endif %}
-			            	{% endfor %}
-
-						</tbody>
-					</table>
-				</div>
-			</div>
+                  {% if feature.type === 'check' %}
+                    {% include "partials/package/_check-row.html" %}
+                  {% endif %}
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
 		</div>
 
     {% if packageSlides|length %}
@@ -98,12 +100,14 @@
 
 			<ul class="checklist">
 				{% for check in item.checklist %}
-				<li class="checklist__item">
-					<svg class="checklist__icon-{{check.checked}}" role="img" aria-hidden="true">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-{{check.checked}}"></use>
-					</svg>
-					{{check.title}}
-				</li>
+          {% if check.title %}
+            <li class="checklist__item">
+              <svg class="checklist__icon-{{check.checked}}" role="img" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-{{check.checked}}"></use>
+              </svg>
+              {{check.title}}
+            </li>
+          {% endif %}
 				{% endfor %}
 			</ul>
 		</div>
