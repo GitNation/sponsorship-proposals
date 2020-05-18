@@ -6,18 +6,28 @@ export default {
     {
       name: "details",
       title: "Package Description",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "features",
-      title: "Package Includes",
-      options: { collapsible: true, collapsed: true },
+      title: "Package features to list in table (offline events only)",
+      options: { collapsible: true, collapsed: false },
     },
   ],
   fields: [
     {
       name: "name",
       title: "Name",
+      type: "string",
+    },
+    {
+      name: "featSoldout",
+      title: "Sold Out",
+      type: "boolean",
+    },
+    {
+      name: "featPrice",
+      title: "Full Price",
       type: "string",
     },
     {
@@ -111,18 +121,6 @@ export default {
       name: "hideInTable",
       title: "Don't show this package in table",
       type: "boolean",
-      fieldset: "features",
-    },
-    {
-      name: "featSoldout",
-      title: "Sold Out",
-      type: "boolean",
-      fieldset: "features",
-    },
-    {
-      name: "featPrice",
-      title: "Full Price",
-      type: "string",
       fieldset: "features",
     },
     {

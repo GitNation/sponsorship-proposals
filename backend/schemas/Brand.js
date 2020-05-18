@@ -6,47 +6,47 @@ export default {
     {
       name: "intro",
       title: "Intro Block",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "motivation",
       title: "Motivation Block",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "stats",
       title: "Stats Block",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "tiles",
       title: "Tiles Block",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "packages",
       title: "Packages",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "partners",
       title: "Partners Block",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "decorations",
       title: "Decorations (video, slider)",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "info",
       title: "General Information",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: "main",
       title: "Main",
-      options: { collapsible: true, collapsed: true },
+      options: { collapsible: true, collapsed: false },
     },
   ],
   fields: [
