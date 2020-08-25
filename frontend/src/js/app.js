@@ -46,14 +46,9 @@ $(function() {
 	// });
 
 	$('[data-fancybox]').fancybox({
-		buttons: [
-			"zoom",
-			"share",
-			"slideShow",
-			"thumbs",
-			"close",
-		],
-    touch: false
+		buttons: [],
+    touch: false,
+    keyboard: false,
 	});
 
 	/*---------------------------------------------------*/
