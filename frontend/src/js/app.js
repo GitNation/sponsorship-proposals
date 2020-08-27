@@ -49,6 +49,7 @@ $(function() {
 		buttons: [],
     touch: false,
     keyboard: false,
+    autoFocus: false,
 	});
 
 	/*---------------------------------------------------*/
