@@ -10,6 +10,7 @@ const brandIDs = {
   JSNationLive: 'O9I27fZboumean9j8TzJit',
   NodeDayUK: 'cmVu3wsUMKKWfaawlUP3gY',
   MLConfEU: '67a82a37-a1a5-4b0f-9bd1-be837d06c00f',
+  GraphQLGalaxy: '02288c23-986f-4354-9a5b-dcff000b2ace',
   reactAdvanced: '',
   reactDayBerlin: '',
 };
