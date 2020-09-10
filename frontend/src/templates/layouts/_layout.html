@@ -22,6 +22,14 @@
       --introBackground: url({{ info.introBackground.asset.url }});
       --introBackground-inverted: url({{ info.introBackgroundInverted.asset.url }});
     }
+    {% if main.invertOverlayText %}
+    .feature__img-container path, .feature__img-container polygon {
+    fill: white;
+    }
+    .basic-btn, .header__btn {
+    color: white;
+    }
+    {% endif %}
   </style>
 </head>
 

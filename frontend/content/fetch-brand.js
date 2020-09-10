@@ -12,6 +12,7 @@ const queryPages = /* GraphQL */ `
       themeD {
         hex
       }
+      invertOverlayText
       introOverlay {
         hex
       }
