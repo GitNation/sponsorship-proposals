@@ -87,6 +87,12 @@ export default {
       fieldset: "main",
     },
     {
+      name: "invertOverlayText",
+      title: "Invert text color overlaying brand colors",
+      type: "boolean",
+      fieldset: "main",
+    },
+    {
       name: "introOverlay",
       title: "Intro section overlay color fallback",
       type: "color",
