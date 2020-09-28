@@ -191,6 +191,12 @@ export default {
       fieldset: "info",
     },
     {
+      name: "hotjarTrackingId",
+      title: "Hotjar Tracking ID",
+      type: "string",
+      fieldset: "info",
+    },
+    {
       name: "googleTrackingId",
       title: "Google Analytics Tracking ID",
       type: "string",

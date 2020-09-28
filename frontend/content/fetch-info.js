@@ -10,6 +10,7 @@ const queryPages = /* GraphQL */ `
       mediumUrl
       slackUrl
       gaugesTrackingId
+      hotjarTrackingId
       googleTrackingId
       email
       contactUrl
