@@ -235,7 +235,20 @@ export default {
     },
     // motivation
     {
-      title: "Features",
+      title: "Key Features",
+      description: "If key features are set, the features section is moved under stats block",
+      name: "keyFeatures",
+      fieldset: "motivation",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "keyFeature" }],
+        },
+      ],
+    },
+    {
+      title: "Secondary features",
       name: "features",
       fieldset: "motivation",
       type: "array",
@@ -260,6 +273,12 @@ export default {
       ],
     },
     // tiles
+    {
+      title: "Hide Tiles block",
+      name: "hideTilesBlock",
+      type: "boolean",
+      fieldset: "tiles",
+    },
     {
       title: "Animation Delay",
       name: "animDelay",

@@ -1,16 +1,10 @@
-const { getSvg } = require('./svg');
-
 const queryPages = /* GraphQL */ `
   query($brandId: ID!) {
     data: Brand(id: $brandId) {
-      features {
-        title
+      keyFeatures {
+        keyFigure
+        keyFigureLabel
         description
-        icon {
-          asset {
-            url
-          }
-        }
       }
     }
   }
@@ -19,24 +13,22 @@ const queryPages = /* GraphQL */ `
 const fetchData = async(client, vars) => {
   const data = await client
     .request(queryPages, vars)
-    .then(res => res.data.features);
+    .then(res => res.data.keyFeatures);
 
   if (!data) {
     return {
-      features: null
+      keyFeatures: null
     };
   }
 
-  const features = data.map(async(feature, ind) => ({
-    ...feature,
-    svg: await getSvg(feature.icon),
+  const keyFeatures = data.map(async(keyFeature, ind) => ({
+    ...keyFeature,
     animation: 'fade-up',
     animDelay: 200 + ind * 100,
-    iconClass: `feature_${ind + 1}`,
   }));
 
   return {
-    features,
+    keyFeatures,
   };
 };
 

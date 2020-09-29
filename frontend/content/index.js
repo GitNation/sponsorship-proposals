@@ -5,11 +5,12 @@ const { credentials, brandIDs, isDebug } = require('./config');
 const brandContent = require('./fetch-brand');
 const infoContent = require('./fetch-info');
 const featuresContent = require('./fetch-features');
+const keyFeaturesContent = require('./fetch-key-features');
 const packagesContent = require('./fetch-packages');
 const partnersContent = require('./fetch-partners');
 const sponsorsContent = require('./fetch-sponsors');
 const statsContent = require('./fetch-stats');
-const talesContent = require('./fetch-tales');
+const tilesContent = require('./fetch-tiles');
 
 const createClient = ({ endpoint, token }) => {
   return new GraphQLClient(endpoint, {
@@ -29,11 +30,12 @@ const getContent = async() => {
     brandContent,
     infoContent,
     featuresContent,
+    keyFeaturesContent,
     packagesContent,
     partnersContent,
     sponsorsContent,
     statsContent,
-    talesContent,
+    tilesContent,
   ].map(async content => {
     try {
       return await content.fetchData(client, {

@@ -11,6 +11,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // import author from './author'
 import Brand from "./Brand";
 import Feature from "./Feature";
+import KeyFeature from "./KeyFeature";
 import Graph from "./Graph";
 import StatTile from "./StatTile";
 import Package from "./Package";
@@ -29,6 +30,7 @@ export default createSchema({
     // in the studio.
     Brand,
     Feature,
+    KeyFeature,
     Graph,
     StatTile,
     Package,

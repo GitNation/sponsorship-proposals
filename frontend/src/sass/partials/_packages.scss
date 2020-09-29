@@ -4,6 +4,12 @@
 	margin: 0 -15px 0;
 }
 
+.section.stats + .section.packages {
+    .container {
+        padding-top: 0;
+    }
+}
+
 .packages-switch{
 	width: 132px;
 	font-size: 16px;
@@ -31,7 +37,7 @@
 		}
 
 		&:hover{
-			
+
 		}
 
 		&:first-child{
@@ -76,7 +82,7 @@
 	}
 
 	@include med{
-		margin: 75px -30px 0;
+		margin: 0 -30px 0;
 	}
 }
 
@@ -504,7 +510,7 @@
 	&__right{
 		padding: 0 var(--side-spacing) 50px var(--side-spacing);
 		width: 40%;
-		
+
 		img{
 			width: 100%;
 			height: auto;
@@ -581,7 +587,7 @@
 	}
 
 	@include sm{
-		
+
 		&__right{
 			display: flex;
 			flex-direction: column;
@@ -656,7 +662,7 @@
 	}
 
 	@include sm{
-		
+
 		&__item{
 			flex-direction: column;
 		}

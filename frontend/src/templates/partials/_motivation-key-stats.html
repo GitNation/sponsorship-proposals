@@ -1,0 +1,14 @@
+<section class="section motivation" id="motivation">
+	<div class="container">
+		<div class="features features_key">
+			{% for item in keyFeatures %}
+			<div class="feature feature_key" data-aos="{{item.animation}}" data-aos-delay="{{item.animDelay}}">
+				<h3 class="feature__key-figure">
+          <strong>{{item.keyFigure}}</strong> {{item.keyFigureLabel}}
+        </h3>
+        <div class="feature__key-figure-description">{{item.description}}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

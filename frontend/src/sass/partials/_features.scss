@@ -3,7 +3,15 @@
 	display: flex;
 	justify-content: center;
 
+    &_key {
+        margin-top: 0;
+    }
+
 	@include sm{
+        &_key {
+            margin-top: 0;
+        }
+
 		margin: 50px 0 20px;
 		flex-direction: column;
 	}
@@ -16,6 +24,10 @@
 	align-items: center;
 	flex-direction: column;
 	margin: 0 50px;
+
+    &_key {
+        align-items: flex-start;
+    }
 
 	&__img-wrap{
 		width: 94px;
@@ -76,6 +88,26 @@
 			}
 		}
 	}
+
+    &__key-figure {
+        color: var(--clr-theme);
+        font-size: 24px;
+
+        strong {
+            display: block;
+            font-size: 120px;
+            line-height: 1;
+
+            @include sm{
+                font-size: 100px;
+            }
+        }
+    }
+
+    &__key-figure-description {
+		font-size: 16px;
+		line-height: 1.64;
+    }
 
 	@include xl{
 		margin: 0 25px;

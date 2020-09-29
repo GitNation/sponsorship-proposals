@@ -7,9 +7,21 @@
 	<main class="content">
 
 		{% include "partials/_intro.html" %}
-		{% include "partials/_motivation.html" %}
-		{% include "partials/_stats.html" %}
-		{% include "partials/_tile-stats.html" %}
+
+    {% if keyFeatures %}
+      {% include "partials/_motivation-key-stats.html" %}
+      {% include "partials/_stats.html" %}
+      {% include "partials/_motivation.html" %}
+    {% else %}
+      {% include "partials/_motivation.html" %}
+      {% include "partials/_stats.html" %}
+    {% endif %}
+
+
+    {% if not hideTilesBlock %}
+		  {% include "partials/_tile-stats.html" %}
+    {% endif %}
+
 		{% include "partials/_packages.html" %}
 		{% include "partials/_partners.html" %}
 

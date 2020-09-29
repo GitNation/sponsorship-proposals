@@ -2,6 +2,7 @@ const queryPages = /* GraphQL */ `
   query($brandId: ID!) {
     data: Brand(id: $brandId) {
       animDelay
+      hideTilesBlock
       tales {
         image {
           asset {
@@ -21,7 +22,7 @@ const getUrl = image => image && image.asset && image.asset.url;
 const fetchData = async(client, vars) => {
   const data = await client.request(queryPages, vars).then(res => res.data);
 
-  const { animDelay } = data;
+  const { animDelay, hideTilesBlock } = data;
 
   const tales = data.tales.map(({ image, title, value, description }, ind) => ({
     title,
@@ -34,6 +35,7 @@ const fetchData = async(client, vars) => {
   return {
     tileStats: tales,
     animDelay,
+    hideTilesBlock,
   };
 };
 
