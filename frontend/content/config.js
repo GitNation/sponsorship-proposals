@@ -11,6 +11,8 @@ const brandIDs = {
   NodeDayUK: 'cmVu3wsUMKKWfaawlUP3gY',
   MLConfEU: '67a82a37-a1a5-4b0f-9bd1-be837d06c00f',
   GraphQLGalaxy: '02288c23-986f-4354-9a5b-dcff000b2ace',
+  TestJSSummit: '36a585d8-5dea-43ca-8226-92723eaa5b21',
+  NodeCyberSummit: '3c2be5b8-dade-49c0-a681-752cf81ccd6e',
   reactAdvanced: '',
   reactDayBerlin: '',
 };
