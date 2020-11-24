@@ -6,7 +6,7 @@
     "start": "gulp",
     "dev": "gulp",
     "disabled_precommit": "lint-staged",
-    "build-all-brands": "concurrently --max-processes 3 --restart-tries 1 'BRAND_NAME=JSNation yarn build' 'BRAND_NAME=JSNationLive yarn build' 'BRAND_NAME=reactSummit yarn build' 'BRAND_NAME=NodeDayUK yarn build' 'BRAND_NAME=MLConfEU yarn build' 'BRAND_NAME=GraphQLGalaxy yarn build' 'BRAND_NAME=TestJSSummit yarn build' 'BRAND_NAME=NodeCongress yarn build' 'BRAND_NAME=DevOpsJS yarn build'",
+    "build-all-brands": "concurrently --max-processes 3 --restart-tries 1 'BRAND_NAME=JSNation yarn build' 'BRAND_NAME=JSNationLive yarn build' 'BRAND_NAME=reactSummit yarn build' 'BRAND_NAME=NodeDayUK yarn build' 'BRAND_NAME=MLConfEU yarn build' 'BRAND_NAME=GraphQLGalaxy yarn build' 'BRAND_NAME=TestJSSummit yarn build' 'BRAND_NAME=NodeCongress yarn build' 'BRAND_NAME=DevOpsJS yarn build' 'BRAND_NAME=rsre yarn build'",
     "build-redirects": "cp _redirects build/",
     "ci-build-all": "yarn build-all-brands && yarn build-redirects",
     "lint": "eslint --ignore-pattern 'src/js/lib/' --cache --format=node_modules/eslint-formatter-pretty src/js/",
