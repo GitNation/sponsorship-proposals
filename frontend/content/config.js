@@ -13,6 +13,7 @@ const brandIDs = {
   GraphQLGalaxy: '02288c23-986f-4354-9a5b-dcff000b2ace',
   TestJSSummit: '36a585d8-5dea-43ca-8226-92723eaa5b21',
   NodeCongress: '3c2be5b8-dade-49c0-a681-752cf81ccd6e',
+  DevOpsJS: 'b7b358b0-a3d8-4e8c-a025-810066ecc724',
   reactAdvanced: '',
   reactDayBerlin: '',
 };
