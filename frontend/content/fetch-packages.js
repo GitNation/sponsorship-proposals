@@ -15,9 +15,7 @@ const queryPages = /* GraphQL */ `
         tags
         price
         subtitle
-        description
         markdown
-        options
         hideInTable
         rightImage {
           asset {

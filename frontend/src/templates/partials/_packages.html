@@ -74,8 +74,9 @@
 			<h3 class="package-popup__title">{{item.title}}</h3>
 			<p class="package-popup__price">{{item.price}}</p>
 			<h4 class="package-popup__subtitle">{{item.subtitle}}</h4>
-			<p class="package-popup__options">{{item.options}}</p>
 			<p class="package-popup__desc">{{item.description | safe}}</p>
+
+			<p class="package-popup__options">Add-ons at this level</p>
 
 			<ul class="stuff-list">
 				{% for stuffItem in item.addons %}

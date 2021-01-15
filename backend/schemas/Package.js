@@ -74,21 +74,9 @@ export default {
       fieldset: "details",
     },
     {
-      name: "description",
-      title: "Description",
-      type: "string",
-      fieldset: "details",
-    },
-    {
       name: "markdown",
       title: "Description Markdown",
       type: "text",
-      fieldset: "details",
-    },
-    {
-      name: "options",
-      title: "Options",
-      type: "string",
       fieldset: "details",
     },
     {
