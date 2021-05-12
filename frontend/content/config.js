@@ -15,7 +15,7 @@ const brandIDs = {
   TestJSSummit: '36a585d8-5dea-43ca-8226-92723eaa5b21',
   NodeCongress: '3c2be5b8-dade-49c0-a681-752cf81ccd6e',
   DevOpsJS: 'b7b358b0-a3d8-4e8c-a025-810066ecc724',
-  reactAdvanced: '',
+  reactAdvanced: '2625576c-ac31-428c-b28f-f0cdd78b4f69',
   reactDayBerlin: '',
 };
 
