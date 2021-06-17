@@ -16,6 +16,7 @@ const brandIDs = {
   NodeCongress: '3c2be5b8-dade-49c0-a681-752cf81ccd6e',
   DevOpsJS: 'b7b358b0-a3d8-4e8c-a025-810066ecc724',
   reactAdvanced: '2625576c-ac31-428c-b28f-f0cdd78b4f69',
+  vueLondon: 'f7d8b8d7-4a80-4e85-a65f-28c7175275e4',
   reactDayBerlin: '',
 };
 
