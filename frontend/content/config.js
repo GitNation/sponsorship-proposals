@@ -17,6 +17,7 @@ const brandIDs = {
   DevOpsJS: 'b7b358b0-a3d8-4e8c-a025-810066ecc724',
   reactAdvanced: '2625576c-ac31-428c-b28f-f0cdd78b4f69',
   vueLondon: 'f7d8b8d7-4a80-4e85-a65f-28c7175275e4',
+  webgamedevsummit: '4bbbc0ad-a36b-4ef0-97e9-ad39c95d1d6f',
   reactDayBerlin: '',
 };
 
