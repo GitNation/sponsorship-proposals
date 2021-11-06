@@ -1,6 +1,6 @@
 <section class="section partners" id="partners">
 	<div class="container">
-    {% if sponsors|length %}
+    {% if sponsors.list|length %}
     <h3 class="section__title">Partners</h3>
     {% endif %}
 
@@ -50,7 +50,7 @@
     {% if youtubeVideo %}
 		<iframe class="partners__video" data-aos="zoom-in" src="{{ youtubeVideo }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     {% else %}
-    {% if sponsors|length %}<div style="padding-bottom: 130px"></div>{% endif %}
+    {% if sponsors.list|length %}<div style="padding-bottom: 130px"></div>{% endif %}
     {% endif %}
 
     <h3 class="section__title">Want to become our partner?</h3>
