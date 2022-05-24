@@ -19,7 +19,7 @@ const brandIDs = {
   vueLondon: 'f7d8b8d7-4a80-4e85-a65f-28c7175275e4',
   webgamedevsummit: '4bbbc0ad-a36b-4ef0-97e9-ad39c95d1d6f',
   tscongress: 'abe86720-7619-4cae-bde1-408a8463535d',
-  reactDayBerlin: '',
+  ReactDayBerlin: '4168329b-bbee-41d8-93fc-62ba0edbd7de',
 };
 
 const credentials = {
