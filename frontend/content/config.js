@@ -20,6 +20,7 @@ const brandIDs = {
   webgamedevsummit: '4bbbc0ad-a36b-4ef0-97e9-ad39c95d1d6f',
   tscongress: 'abe86720-7619-4cae-bde1-408a8463535d',
   ReactDayBerlin: '4168329b-bbee-41d8-93fc-62ba0edbd7de',
+  remixconfeu: 'f366a626-58e4-4dcc-a093-723e93c30a69',
 };
 
 const credentials = {
