@@ -31,7 +31,7 @@ commands:
 jobs:
   buildBrandsAndDeployToDev:
     docker:
-      - image: circleci/node:16
+      - image: circleci/node:10.24.1
 
     steps:
       - dependencies
@@ -45,7 +45,7 @@ jobs:
   # This command is being only called directly via API referencing this job to manually trigger production deploy to Netlify
   buildBrandsAndDeployToProd:
     docker:
-      - image: circleci/node:16
+      - image: circleci/node:10.24.1
 
     steps:
       - dependencies
