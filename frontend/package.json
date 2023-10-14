@@ -73,7 +73,7 @@
     "require-yaml": "^0.0.1",
     "run-sequence": "^2.2.1",
     "svgxuse": "^1.2.6",
-    "swiper": "^4.4.6",
+    "swiper": "^6.5.1",
     "unified": "^8.4.1",
     "webpack": "^4.6.0",
     "webpack-glsl-loader": "^1.0.1"
