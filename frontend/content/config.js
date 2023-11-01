@@ -5,6 +5,7 @@ if (!process.env.SANITY_ENDPOINT || !process.env.SANITY_TOKEN) {
 }
 
 const brandIDs = {
+  C3Festival: 'bb439caf-801b-4825-9355-0bc1cf4e16a3',
   reactSummit: '8224681e-d99e-45f5-8dfe-14a916a952e9',
   rsre: 'be8fcf13-56e5-40d2-b1f7-337187278ca5',
   JSNation: 'nt8f6wsK8Ivu113FajImcZ',
