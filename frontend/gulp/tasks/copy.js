@@ -19,6 +19,10 @@ gulp.task('copy:lib', function () {
         .pipe(gulp.dest(config.dest.lib));
 });
 
+gulp.task("copy:css", function () {
+	return gulp.src(config.src.css + "/**/*.*").pipe(gulp.dest(config.dest.css));
+});
+
 gulp.task('copy:rootfiles', function () {
     return gulp
         .src(config.src.root + '/*.*')
@@ -49,14 +53,15 @@ gulp.task('copy:video', function () {
         .pipe(gulp.dest(config.dest.video));
 });
 
-gulp.task('copy', [
-    'copy:img',
-    'copy:pic',
-    'copy:video',
-    'copy:rootfiles',
-    // 'copy:lib',
-    // 'copy:data',
-    'copy:fonts'
+gulp.task("copy", [
+	"copy:css",
+	"copy:img",
+	"copy:pic",
+	"copy:video",
+	"copy:rootfiles",
+	// 'copy:lib',
+	// 'copy:data',
+	"copy:fonts",
 ]);
 gulp.task('copy:watch', function () {
     gulp.watch(config.src.img + '/*', ['copy']);

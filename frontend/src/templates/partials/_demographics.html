@@ -1,0 +1,63 @@
+<section class="section sec-demographics" id="demographics">
+	<div class="container">
+		<div class="section__head">
+			<h2 class="section__title">Audience demographics</h2>
+			<div class="section__description">
+				Our events attract a wide range of people who share a passion for building better software
+			</div>
+		</div>
+
+		<div class="demographics__tabs tab-block" data-tabs>
+			<nav class="tab-block__nav" data-tabs-nav>
+				<button class="tab-block__navitem _active" data-tabs-button="0">IN-PERSON GEO</button>
+				<button class="tab-block__navitem" data-tabs-button="1">ATTENDEE GLOBAL GEO</button>
+				<button class="tab-block__navitem " data-tabs-button="2">JOB TITLES</button>
+			</nav>
+			<div class="tab-block__items" data-tabs-items>
+				<div class="tab-block__item _active" data-tabs-block>
+					<div class="graphics">
+						{% for item in range(0,7) %}
+						<div class="graphics__item">
+							<div class="graphics__inner">
+								<div class="graphics__percent">25%</div>
+								<div class="graphics__progress" style="--progress: 25%;"></div>
+							</div>
+							<div class="graphics__title">Other International</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="tab-block__item" data-tabs-block>
+					<div class="graphics">
+						{% for item in range(0,7) %}
+						<div class="graphics__item">
+							<div class="graphics__inner">
+								<div class="graphics__percent">15%</div>
+								<div class="graphics__progress" style="--progress: 15%;"></div>
+							</div>
+							<div class="graphics__title">Germany</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="tab-block__item " data-tabs-block>
+					<div class="graphics-circle">
+						{% for item in range(0,4) %}
+						<div class="graphics-circle__item">
+							<div class="graphics-circle__inner">
+								<svg viewBox="0 0 36 36" class="graphics-circle__svg" stroke=var(--clr-theme)>
+									<path class="graphics-circle__svg-bg" d="M18 1.3 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+									<path class="graphics-circle__svg-progress" stroke-dasharray="15, 100" d="M18 1.3 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+									<text x="18" y="20.35" class="graphics-circle__percentage">15%</text>
+								</svg>
+							</div>
+							<p class="graphics-circle__title">Engineer</p>
+
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

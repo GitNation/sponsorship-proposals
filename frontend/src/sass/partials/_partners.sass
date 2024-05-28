@@ -1,0 +1,60 @@
+.sponsors-block
+	display: grid
+	grid-template-columns: repeat(4,1fr)
+	gap: 1px
+	+md
+		grid-template-columns: repeat(3,1fr)
+	+xxs
+		grid-template-columns: repeat(2,1fr)
+	&__item
+		outline: 1px solid var(--clr-black-300)
+
+		border-radius: 30px
+		aspect-ratio: 1/0.66
+		padding: 30px
+		display: flex
+		align-items: center
+		justify-content: center
+		+md
+			padding: 20px
+			border-radius: 20px
+		+sm
+			padding: 15px
+		img
+			max-width: 100%
+			max-height: 70%
+
+.partners-promo
+	background: var(--clr-theme)
+	padding: 95px 137px
+	text-align: center
+	border-radius: 30px
+	+lg
+		padding: 70px 80px
+	+md
+		padding: 70px 44px
+	+sm
+		border-radius: 20px
+		padding: 40px 20px
+	&__title
+		color: var(--clr-black)
+		font-size: 80px
+		text-transform: uppercase
+		text-wrap: balance
+		font-weight: 500
+		line-height: .8
+		+lg
+			font-size: 60px
+		+sm
+			font-size: clamp(32px, 9.7vw, 60px)
+
+	&__btn
+		margin-top: 55px
+		+sm
+			margin-top: 30px
+		.btn
+			max-width: 340px
+			width: 100%
+			margin-left: auto
+			margin-right: auto
+			display: flex

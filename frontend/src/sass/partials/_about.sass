@@ -1,0 +1,19 @@
+.about
+	&__content
+		display: grid
+		grid-template-columns: 1fr calc(50% + 20px)
+		align-items: flex-start
+		gap: 20px 40px
+		+md
+			grid-template-columns: 1fr
+			gap: 15px 0
+		&-left
+			font-size: 22px
+			line-height: 1.2
+			+sm
+				font-size: 16px
+
+		& + .about__content
+			margin-top: 65px
+			+md
+				margin-top: 50px

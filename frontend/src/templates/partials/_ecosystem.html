@@ -1,0 +1,61 @@
+<section class="section sec-ecosystem" id="ecosystem">
+	<div class="container">
+		<div class="section__head">
+			<h3 class="section__suptitle">One stop shop</h3>
+			<h2 class="section__title">Extensive JavaScript ecosystem</h2>
+			<div class="section__description">
+				We offer attractive combo-deal packages for covering a selection of conferences in wide geographies through the year and addressing variety of major JavaScript communities.
+			</div>
+			<div class="section__btn">
+				<a href="#" class="btn btn--outline-accent ttu">Enquire about combo deals</a>
+			</div>
+		</div>
+
+		<div class="swiper conferences-swiper">
+			<div class="swiper-wrapper">
+				{% for item in range(0,8) %}
+				<div class="swiper-slide conferences-item">
+
+					<div class="conferences-item__img">
+						<img src="img/cs-img-1.png" alt="">
+					</div>
+					<div class="conferences-item__body">
+						<div class="conferences-item__title">TechLead Conference 2024</div>
+						<div class="conferences-item__date">June 14 - 18, 2024</div>
+					</div>
+					<div class="conferences-item__arrow">
+						<svg class="icon icon-arrow-right">
+							<use xlink:href="img/sprite.svg#arrow-right"></use>
+						</svg>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="banner" style="background-image: url('img/banner-bg.png');">
+			<a href="#" class="banner__link">&nbsp;</a>
+			<div class="banner__head">
+				<div class="banner__logo">
+					<img src="img/c3logo.svg" alt="">
+				</div>
+				<div class="banner__date">June 14-15, 2024 Amsterdam</div>
+			</div>
+			<div class="banner__content">
+				<div class="banner__title">The contemporary software engineering and design festival</div>
+				<div class="banner__text">Imagine a playground for career advancement, focusing on networking, groundbreaking tech ideas, and unique experiences with other ambitious people</div>
+				<div class="banner__tags">
+					<span>Leadership</span>
+					<span>Career Growth</span>
+					<span>Productivity</span>
+					<span>Innovation</span>
+					<span>AI</span>
+					<span>Software Architecture</span>
+					<span>UX</span>
+					<span>Psychology in Tech</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

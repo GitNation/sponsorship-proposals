@@ -1,0 +1,150 @@
+.conference-sponsor
+
+	&__content
+		display: grid
+		grid-template-columns: 1fr calc(50% + 20px)
+		align-items: flex-start
+		gap: 20px 40px
+		+md
+			grid-template-columns: 1fr
+		+sm
+			gap: 15px 0
+
+.cs-list
+	margin-top: 75px
+	+md
+		margin-top: 35px
+	&__item
+		border-top: 1px solid var(--clr-black-300)
+		&:last-child
+			border-bottom: 1px solid var(--clr-black-300)
+	&__head
+		display: flex
+		align-items: center
+		min-height: 130px
+		padding: 35px 0 35px 10px
+		gap: 24px
+		cursor: pointer
+		+md
+			min-height: 102px
+			padding: 18px 0 18px 0
+			gap: 18px
+		+sm
+			gap: 10px
+			min-height: 96px
+		&:hover, &:focus-visible
+			.cs-list
+				&__caret
+					background: var(--clr-theme)
+					&:after, &:before
+						background: var(--clr-black)
+
+		&.is-active
+			.cs-list__icon
+				.icon
+					color: var(--clr-theme)
+			.cs-list__description
+				color: var(--clr-white)
+			.cs-list__caret
+				&:after
+					display: none
+			& + .cs-list__body
+				display: block
+
+	&__icon
+		flex: none
+		width: 82px
+		height: 50px
+		display: flex
+		align-items: center
+		justify-content: center
+		+md
+			width: 56px
+		+xxs
+			width: 40px
+			height: 40px
+		.icon
+			font-size: 50px
+			color: var(--clr-black-350)
+			+md
+				font-size: 48px
+			+xxs
+				font-size: 38px
+	&__title
+		flex: 1
+		font-size: 22px
+		line-height: 1.1
+		margin-right: 30px
+		+lg
+			font-size: 20px
+		+sm
+			font-size: 16px
+			margin-right: 0
+
+	&__description
+		flex: none
+		align-self: flex-start
+		width: 42.1%
+		line-height: 1.2
+		color: var(--clr-gray-100)
+		+lg
+			width: 40%
+		+md
+			display: none
+	&__body
+		margin-top: -20px
+		width: calc(42.1% - 4px)
+		margin-left: auto
+		padding-bottom: 35px
+		flex: none
+		margin-right: 90px
+		display: none
+		+lg
+			width: calc(40% - 4px)
+		+md
+			width: 100%
+			margin-top: 0
+		.cs-list__description
+			display: none
+			width: 100%
+			color: #fff
+			+md
+				display: block
+				margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0 !important
+	&__caret
+		flex: none
+		width: 60px
+		height: 60px
+		margin-left: 10px
+		border: 1px solid var(--clr-black-300)
+		border-radius: 50%
+		position: relative
+		+md
+			width: 50px
+			height: 50px
+		+sm
+			width: 40px
+			height: 40px
+			margin-left: 0
+		&:before, &:after
+			content: ''
+
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			background: var(--clr-white)
+		&:before
+			width: 28px
+			height: 2px
+			+md
+				width: 18px
+
+		&:after
+			height: 28px
+			width: 2px
+			+md
+				height: 18px
