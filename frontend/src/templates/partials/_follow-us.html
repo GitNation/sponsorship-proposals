@@ -1,20 +1,20 @@
 <section class="section sec-follow-us" id="follow-us">
 	<div class="container">
 		<div class="sec-follow-us__img">
-			<img src="img/follow-us-img.jpg" alt="">
+			<img src="{{info.followUsImg.asset.url}}" alt="{{info.followUsTitle}}" role="presentation">
 		</div>
 		<div class="section__head">
-			<h2 class="section__title">Follow us for updates</h2>
+			<h2 class="section__title">{{info.followUsTitle}}</h2>
 			<div class="section__description">
-				Subscribe to our conference newsletter and get the latest updates and special deals
+				{{info.followUsDescription}}
 			</div>
 		</div>
 
 
 		<div class="follow-us">
-			<form action="#">
-				<input type="email" required placeholder="your@mail" class="follow-us__input" />
-				<button class="follow-us__btn btn btn--outline">Subscribe</button>
+			<form action="https://share.hsforms.com/1N3SFVDZjQLW4rYWjmMr7xA1nl0a" target="_blank" method="GET">
+				<input type="email" required placeholder="your@mail" class="follow-us__input" name="email" />
+				<button type="submit" class="follow-us__btn btn btn--outline">Subscribe</button>
 			</form>
 		</div>
 	</div>

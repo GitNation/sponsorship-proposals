@@ -63,7 +63,11 @@
 					box-shadow: 0px 0px 70px 0px #fff
 				.packages__arrow
 					background: #FFFFFF
-
+	&__link
+		+coverdiv
+		display: block
+		text-decoration: none
+		z-index: 4
 	&__head
 		width: calc(48% - 22px)
 		+md
@@ -78,35 +82,13 @@
 		padding-right: 60px
 		+md
 			display: none
-		ul
-			list-style-type: none
-			li
-				position: relative
-				padding-left: 27px
-				font-size: 14px
-				color: var(--clr-gray-100)
-				margin-bottom: 7px
-				&:last-child
-					margin-bottom: 0
-				&:before
-					content: ''
-					position: absolute
-					top: 0.08em
-					left: 0
-					background: url('/img/check.svg') no-repeat center
-					background-size: contain
-					width: 1.3em
-					height: 1.3em
-				&.active
-					&:before
-						background: url(../img/Lightning.svg) no-repeat center
-						top: 0.1em
 
 	&__title
 		font-size: 72px
 		text-transform: uppercase
 		line-height: .9
 		font-weight: 500
+
 		+lg
 			font-size: 62px
 		+sm
@@ -180,3 +162,28 @@
 		+xxs
 			font-size: 10px
 			padding: 0 8px
+
+.checklist
+	list-style-type: none
+	li
+		position: relative
+		padding-left: 27px
+		font-size: 14px
+		color: var(--clr-gray-100)
+		margin-bottom: 7px
+		&:last-child
+			margin-bottom: 0
+		&:before
+			content: ''
+			position: absolute
+			top: 0.08em
+			left: 0
+			background: url('/img/check.svg') no-repeat center
+			background-size: contain
+			width: 1.3em
+			height: 1.3em
+		&.active
+			color: #fff
+			&:before
+				background: url(../img/Lightning.svg) no-repeat center
+				top: 0.1em

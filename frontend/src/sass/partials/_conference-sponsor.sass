@@ -41,7 +41,7 @@
 
 		&.is-active
 			.cs-list__icon
-				.icon
+				svg
 					color: var(--clr-theme)
 			.cs-list__description
 				color: var(--clr-white)
@@ -63,7 +63,11 @@
 		+xxs
 			width: 40px
 			height: 40px
-		.icon
+		svg
+			width: 1em
+			height: 1em
+			fill: currentColor
+			stroke: currentColor
 			font-size: 50px
 			color: var(--clr-black-350)
 			+md

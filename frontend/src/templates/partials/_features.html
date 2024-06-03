@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="swiper features-swiper">
 			<div class="swiper-wrapper">
-				{% for item in range(0,6) %}
-				<div class="swiper-slide feature" style="background-image: url('img/features-img.png');">
-					<div class="feature__text">Introduce your product or services to a new audience who never heard about your company</div>
+				{% for item in packageSlides %}
+				<div class="swiper-slide feature" style="background-image: url('{{item.image.asset.url}}');">
+					<div class="feature__text">{{item.caption}}</div>
 				</div>
 				{% endfor %}
 			</div>

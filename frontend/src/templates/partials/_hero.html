@@ -17,22 +17,22 @@
 		<div class="hero__top">
 			<div class="hero__logo">
 				<a href="#" class="logo">
-					<img src="https://gitnation.imgix.net/stichting-frontend-amsterdam/image/upload/v1619376923/fszvxiu9y2alolt9eymk.jpg?auto=format,compress&fit=scale&w=300" alt="React Summit 2024">
+					<img src="{{ info.logo.asset.url }}" alt="React Summit 2024">
 				</a>
-				<h1 class="hero__name">React Summit 2024</h1>
+				<h1 class="hero__name">{{info.name}}</h1>
 			</div>
-			<div class="hero__date">June 14 - 18, 2024</div>
-			<div class="hero__location">Amsterdam & Online</div>
+			<div class="hero__date">{{ info.introDate }}</div>
+			<div class="hero__location">{{ info.introLocation }}</div>
 		</div>
 
 		<div class="hero__middle">
-			<h2 class="hero__title">THE BIGGEST REACT CONFERENCE WORLDWIDE</h2>
-			<h3 class="hero__subtitle">A landmark React event ran since 2016, 1500 in-person attendees and top of industry remote reach</h3>
+			<h2 class="hero__title">{{ info.introTitle }}</h2>
+			<h3 class="hero__subtitle">{{ info.introSubtitle }}</h3>
 		</div>
 
 		<div class="hero__bottom">
 			<div class="hero__sponsorship sponsorship">
-				Sponsorship proposal 2024
+				{{ info.introSponsorship }}
 			</div>
 			<div class="hero__socials">
 				<div class="socials-dropdown">
@@ -42,37 +42,17 @@
 						</svg>
 					</button>
 					<div class="socials ">
-						<a href="#" class="socials__link">
-							<svg class="icon icon-tiktok">
-								<use xlink:href="img/sprite.svg#tiktok"></use>
-							</svg>
-						</a>
-						<a href="#" class="socials__link">
-							<svg class="icon icon-twitter">
-								<use xlink:href="img/sprite.svg#twitter"></use>
-							</svg>
-						</a>
-						<a href="#" class="socials__link">
-							<svg class="icon icon-youtube">
-								<use xlink:href="img/sprite.svg#youtube"></use>
-							</svg>
-						</a>
-						<a href="#" class="socials__link">
-							<svg class="icon icon-medium">
-								<use xlink:href="img/sprite.svg#medium"></use>
-							</svg>
-						</a>
-						<a href="#" class="socials__link">
-							<svg class="icon icon-gitnation">
-								<use xlink:href="img/sprite.svg#gitnation"></use>
-							</svg>
-						</a>
-
+						{% if info.facebookUrl %}<a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a>{% endif %}
+						{% if info.twitterUrl %}<a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('tw')}}</a>{% endif %}
+						{% if info.youtubeUrl %}<a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('yt')}}</a>{% endif %}
+						{% if info.mediumUrl %}<a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('med')}}</a>{% endif %}
+						{% if info.slackUrl %}<a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a>{% endif %}
+						{% if info.portal %}<a href="{{ info.portal }}" class="social__link" target="_blank">{{mixins.icon('gitnation')}}</a>{% endif %}
 					</div>
 				</div>
 			</div>
 			<div class="hero__event-by">
-				<a href="#" class="btn btn--outline">
+				<a href="https://gitnation.org/" class="btn btn--outline" target="_blank">
 					event by <span class="btn__accent-text">GitNation</span>
 				</a>
 			</div>

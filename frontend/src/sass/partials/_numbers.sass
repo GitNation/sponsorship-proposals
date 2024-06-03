@@ -1,12 +1,11 @@
 .numbers
 	display: grid
-	grid-template-columns: repeat(4,1fr)
+	grid-template-columns: repeat(4,25%)
 	margin-top: 30px
 
 	+sm
-		// grid-template-columns: [start] 1fr [start2] 1fr
-		// grid-template-rows: [item-sm-1] auto [item-sm-2] auto [item-sm-3] auto [item-sm-4] auto [item-sm-5] auto [item-sm-6] auto [item-sm-7] auto [item-sm-8] auto [item-sm-9] auto [item-sm-10] auto [item-sm-11] auto [item-sm-12] auto [item-sm-13] auto [item-sm-14] auto [item-sm-15] auto [item-sm-16] auto [item-sm-17] auto [item-sm-18] auto
-		grid-template-columns: repeat(2, 1fr)
+
+		grid-template-columns: repeat(2, 50%)
 	&__item
 		border: 1px solid var(--clr-black-300)
 		border-radius: 30px
@@ -64,6 +63,9 @@
 				+md
 					width: clamp(92px, 12.4vw, 120px)
 					min-width: auto
+				img
+					max-width: 150px
+					max-height: 150px
 
 		&--img-center
 			.numbers__img

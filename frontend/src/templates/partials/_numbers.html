@@ -1,183 +1,34 @@
 <section class="section sec-numbers" id="numbers">
 	<div class="container">
 		<div class="section__head">
-			<h3 class="section__suptitle">The conference in numbers</h3>
+			<h3 class="section__suptitle">{{info.tilesTitle}}</h3>
 			<h2 class="section__title">Event edition reach</h2>
 		</div>
 
 		<div class="numbers">
-			<div class="numbers__item" style="--numbers-order: 1">
-				<div class="numbers__head">
-					<div class="numbers__title">registered global attendees</div>
-				</div>
-				<div class="numbers__val">10K+</div>
-			</div>
-			<div class="numbers__item numbers__item--img-center" style="--numbers-order: 2">
-				<div class="numbers__head">
-					<div class="numbers__title">unique livestream viewers</div>
-				</div>
-				<div class="numbers__val">5000</div>
-				<div class="numbers__img">
-					<img src="img/numbers-livestream.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item numbers__item--lg numbers__item--bg" style="--numbers-order: 3">
-				<div class="numbers__head">
-					<div class="numbers__title">In-person attendees</div>
-				</div>
-				<div class="numbers__val">1500+</div>
-				<div class="numbers__img">
-					<img src="img/numbers-attendees.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item numbers__item--lg numbers__item--bg" style="--numbers-order: 4">
-				<div class="numbers__head">
-					<div class="numbers__title">speakers and influencers speaking</div>
-					<div class="numbers__description">and attending</div>
-				</div>
-				<div class="numbers__val">100+</div>
-				<div class="numbers__img">
-					<img src="img/numbers-speaking.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item" style="--numbers-order: 5">
-				<div class="numbers__head">
-					<div class="numbers__title">average livestream
-						watch time</div>
-				</div>
-				<div class="numbers__val">1.5h</div>
-				<div class="numbers__img">
-					<img src="img/numbers-watch-time.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item " style="--numbers-order: 6">
-				<div class="numbers__head">
-					<div class="numbers__title">generated leads</div>
-					<div class="numbers__description">per partner on average</div>
-				</div>
-				<div class="numbers__val">200+</div>
-			</div>
-			<div class="numbers__item" style="--numbers-order: 7">
-				<div class="numbers__head">
-					<div class="numbers__title">handpicked expo partners</div>
-					<div class="numbers__description">in high traffic hall
-						(80% penetration)</div>
-				</div>
-				<div class="numbers__val">15</div>
-				<div class="numbers__img">
-					<img src="img/numbers-partners.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item" style="--numbers-order: 8">
-				<div class="numbers__head">
-					<div class="numbers__title">newsletter for major event</div>
-					<div class="numbers__description">announcements including partner integrations</div>
-				</div>
-				<div class="numbers__val">90K+</div>
-			</div>
-			<div class="numbers__item numbers__item--lg numbers__item--bg" style="--numbers-order: 9">
-				<div class="numbers__head">
-					<div class="numbers__title">people engaged in hands-on partner workshops</div>
-				</div>
-				<div class="numbers__val">500+</div>
-				<div class="numbers__img">
-					<img src="img/numbers-workshops.svg" alt="">
-				</div>
-			</div>
+			{% for num in tileStats %}
 
+			<div class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--bg' if num.isBackgroundColor}} {{'numbers__item--lg' if num.isLarge}}" style="--numbers-order: {{loop.index}}">
+				<div class="numbers__head">
+					<div class="numbers__title">{{num.title}}</div>
+					{% if num.description %}
+					<div class="numbers__description">{{num.description}}</div>
+					{% endif %}
+				</div>
+				{% if num.nums %}<div class="numbers__val">{{num.nums}}</div>{% endif %}
+				{% if num.img %}
+				<div class="numbers__img">
+					<img src="{{num.img}}" alt="{{num.title}}" role="presentation">
+				</div>
+				{% endif %}
+			</div>
+			{% endfor %}
 		</div>
 
-		<div class="section__head">
+		<!-- <div class="section__head">
 			<h2 class="section__title">Recorded content reach</h2>
-		</div>
+		</div> -->
 
-		<div class="numbers">
-			<div class="numbers__item numbers__item--lg numbers__item--bg" style="--numbers-order: 1">
-				<div class="numbers__head">
-					<div class="numbers__title">users per year</div>
-					<div class="numbers__description">ongoing reach to global eveloper network via GitNation.com</div>
-				</div>
-				<div class="numbers__val">500K+</div>
-				<div class="numbers__img">
-					<img src="img/numbers-users-per-year.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item numbers__item--lg " style="--numbers-order: 2">
-				<div class="numbers__head">
-					<div class="numbers__title">talk views
-						across YouTube and GitNation.com</div>
-					<div class="numbers__description">first 6 months with brand ntegrations and pre-rolls</div>
-				</div>
-				<div class="numbers__val">100K+</div>
-				<div class="numbers__img">
-					<img src="img/numbers-talk-views.svg" alt="">
-				</div>
-			</div>
 
-		</div>
-
-		<div class="section__head">
-			<h2 class="section__title">Conference brand reach</h2>
-		</div>
-
-		<div class="numbers">
-			<div class="numbers__item" style="--numbers-order: 1">
-				<div class="numbers__head">
-					<div class="numbers__title">sponsoring partner</div>
-					<div class="numbers__description">over years</div>
-				</div>
-				<div class="numbers__val">200+</div>
-			</div>
-			<div class="numbers__item numbers__item--lg numbers__item--bg" style="--numbers-order: 2">
-				<div class="numbers__head">
-					<div class="numbers__title">conference website users per edition</div>
-				</div>
-				<div class="numbers__val">125K</div>
-				<div class="numbers__img">
-					<img src="img/numbers-website.svg" alt="">
-				</div>
-			</div>
-			<div class="numbers__item" style="--numbers-order: 3">
-				<div class="numbers__head">
-					<div class="numbers__title">total following</div>
-					<div class="numbers__description">of speakers and attending influencers each edition</div>
-				</div>
-				<div class="numbers__val">300K</div>
-			</div>
-			<a href="#" class="numbers__item" style="--numbers-order: 4">
-				<div class="numbers__head">
-					<div class="numbers__icon">
-						<img src="img/twitter.svg" alt="">
-					</div>
-				</div>
-				<div class="numbers__val">875k</div>
-			</a>
-			<a href="#" class="numbers__item" style="--numbers-order: 5">
-				<div class="numbers__head">
-					<div class="numbers__icon">
-						<img src="img/linkedin.svg" alt="">
-					</div>
-				</div>
-				<div class="numbers__val">16K+</div>
-			</a>
-			<a href="#" class="numbers__item" style="--numbers-order: 6">
-				<div class="numbers__head">
-					<div class="numbers__icon">
-						<img src="img/facebook.svg" alt="">
-					</div>
-					<div class="numbers__icon">
-						<img src="img/instagram.svg" alt="">
-					</div>
-				</div>
-				<div class="numbers__val">66K+</div>
-
-			</a>
-			<div class="numbers__end" style="--numbers-order: 7">
-				<div class="numbers__description">
-					Data based on recent edition performance and growth projection for coming events. Final results
-					may differ.
-				</div>
-			</div>
-		</div>
 	</div>
 </section>

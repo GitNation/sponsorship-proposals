@@ -1,61 +1,62 @@
 <section class="section sec-ecosystem" id="ecosystem">
 	<div class="container">
 		<div class="section__head">
-			<h3 class="section__suptitle">One stop shop</h3>
-			<h2 class="section__title">Extensive JavaScript ecosystem</h2>
+			<h3 class="section__suptitle">{{info.shopTitle}}</h3>
+			<h2 class="section__title">{{info.shopSubtitle}}</h2>
+			{% if info.shopDescription %}
 			<div class="section__description">
-				We offer attractive combo-deal packages for covering a selection of conferences in wide geographies through the year and addressing variety of major JavaScript communities.
+				{{info.shopDescription}}
 			</div>
+			{% endif %}
+			{% if info.shopButtonText %}
 			<div class="section__btn">
-				<a href="#" class="btn btn--outline-accent ttu">Enquire about combo deals</a>
+				<a href="{{info.shopButtonUrl}}" class="btn btn--outline-accent ttu">{{info.shopButtonText}}</a>
 			</div>
+			{% endif %}
 		</div>
 
 		<div class="swiper conferences-swiper">
 			<div class="swiper-wrapper">
-				{% for item in range(0,8) %}
-				<div class="swiper-slide conferences-item">
+				{% for item in conferences %}
+				<a href="{{item.url}}" class="swiper-slide conferences-item" target="_blank">
 
 					<div class="conferences-item__img">
-						<img src="img/cs-img-1.png" alt="">
+						<img src="{{item.img.asset.url}}" alt="">
 					</div>
 					<div class="conferences-item__body">
-						<div class="conferences-item__title">TechLead Conference 2024</div>
-						<div class="conferences-item__date">June 14 - 18, 2024</div>
+						<div class="conferences-item__title">{{item.title}}</div>
+						<div class="conferences-item__date">{{item.date}}</div>
 					</div>
 					<div class="conferences-item__arrow">
 						<svg class="icon icon-arrow-right">
 							<use xlink:href="img/sprite.svg#arrow-right"></use>
 						</svg>
 					</div>
-				</div>
+				</a>
 				{% endfor %}
 			</div>
 		</div>
 
-		<div class="banner" style="background-image: url('img/banner-bg.png');">
-			<a href="#" class="banner__link">&nbsp;</a>
+		{% if not info.isBannerShow %}
+		<div class="banner" style="background-image: url('{{info.bannerBg.asset.url}}');">
+			<a href="{{info.bannerUrl}}" class="banner__link">&nbsp;</a>
 			<div class="banner__head">
 				<div class="banner__logo">
-					<img src="img/c3logo.svg" alt="">
+					<img src="{{info.bannerLogo.asset.url}}" alt="" role="presentation">
 				</div>
-				<div class="banner__date">June 14-15, 2024 Amsterdam</div>
+				<div class="banner__date">{{info.bannerDate}}</div>
 			</div>
 			<div class="banner__content">
-				<div class="banner__title">The contemporary software engineering and design festival</div>
-				<div class="banner__text">Imagine a playground for career advancement, focusing on networking, groundbreaking tech ideas, and unique experiences with other ambitious people</div>
+				<div class="banner__title">{{info.bannerTitle}}</div>
+				<div class="banner__text">{{info.bannerDescription}}</div>
 				<div class="banner__tags">
-					<span>Leadership</span>
-					<span>Career Growth</span>
-					<span>Productivity</span>
-					<span>Innovation</span>
-					<span>AI</span>
-					<span>Software Architecture</span>
-					<span>UX</span>
-					<span>Psychology in Tech</span>
+					{% for tag in info.bannerTags %}
+					<span>{{tag}}</span>
+					{% endfor %}
 				</div>
 			</div>
 
 		</div>
+		{% endif %}
 	</div>
 </section>

@@ -36,7 +36,9 @@
 	+rmin(1025px)
 		&:hover, &:focus-visible
 			outline-color: var(--clr-theme)
-			z-index: 2
+			z-index: 3
+			& + .conferences-item
+				z-index: 2
 			&:after
 				opacity: 0.2
 			.conferences-item__arrow

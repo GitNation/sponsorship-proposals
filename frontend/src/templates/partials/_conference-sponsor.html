@@ -1,119 +1,53 @@
 <section class="section conference-sponsor">
 	<div class="container">
 		<div class="section__head">
-			<h3 class="section__suptitle">What you get as a conference sponsor</h3>
-			<h2 class="section__title">Reach. Engage. Strengthen your Brand.</h2>
+			<h3 class="section__suptitle">{{info.motivationTitle}}</h3>
+			<h2 class="section__title">{{info.motivationSubTitle}}</h2>
 		</div>
 		<div class="conference-sponsor__content">
 			<div class="conference-sponsor__content-left section__description">
-				Sponsoring professional tech events yields a variety of benefits for your brand and product, multiplying the efficiency of your DevRel marketing and sales strategies.
+				{{info.motivationDescription}}
 			</div>
+			{% if info.motivationList.length > 0 %}
 			<div class="conference-sponsor__content-right styled-text">
 				<ul>
-					<li>Targeted reach to tens of thousands of forward-looking developers and tech decision-makers <strong>(outreach, leadgen)</strong></li>
-					<li>Direct, live engagement with top 10% devs, early adopters, open-source tech authors, and influencers <strong>(feedback from users, networking, collabs)</strong></li>
-					<li>Build your brand recognition by associating with leading professional event and attending influencers; major tech authors <strong>(brand awareness for targeted audience)</strong></li>
+					{% for item in info.motivationList %}
+					<li>{{item}}</li>
+					{% endfor %}
 				</ul>
-
 			</div>
-
+			{% endif %}
 		</div>
 
 		<div class="cs-list spoller" data-spollers data-one-spoller>
+			{% for spoller in features %}
 			<div class="cs-list__item">
-				<div class="cs-list__head " data-spoller role="button" tabindex="0">
+				<div class="cs-list__head " data-spoller role="button" tabindex="{{loop.index -1}}">
 					<div class="cs-list__icon">
-						<svg class="icon icon-product">
-							<use xlink:href="img/sprite.svg#product"></use>
-						</svg>
+						{{spoller.svg | safe}}
 					</div>
-					<div class="cs-list__title">Present your product</div>
-					<div class="cs-list__description">Present from in-person or remote stage, run workshops, demo solutions directly to future customer from high-traffic expo booth</div>
+					<div class="cs-list__title">{{spoller.title}}</div>
+					{% if spoller.supTitle %}
+					<div class="cs-list__description">{{spoller.supTitle}}</div>
+					{% endif %}
 					<div class="cs-list__caret"></div>
 				</div>
 				<div class="cs-list__body styled-text">
-					<div class="cs-list__description">Present from in-person or remote stage, run workshops, demo solutions directly to future customer from high-traffic expo booth</div>
-
-				</div>
-			</div>
-
-
-			<div class="cs-list__item">
-				<div class="cs-list__head " data-spoller role="button" tabindex="0">
-					<div class="cs-list__icon">
-						<svg class="icon icon-lightning">
-							<use xlink:href="img/sprite.svg#lightning"></use>
-						</svg>
-					</div>
-					<div class="cs-list__title">Generate leads for the top 10% of forward-looking developers</div>
-					<div class="cs-list__description">Expand your sales and marketing timeline through digital lead gen, contests and badge scanning</div>
-					<div class="cs-list__caret"></div>
-				</div>
-				<div class="cs-list__body styled-text">
-					<div class="cs-list__description">Expand your sales and marketing timeline through digital lead gen, contests and badge scanning</div>
-
+					{% if spoller.supTitle %}
+					<div class="cs-list__description">{{spoller.supTitle}}</div>
+					{% endif %}
+					{% if spoller.description.length > 0 %}
 					<ul>
-						<li>Conferences are filled with enthusiastic developers and early adopters with open mind towards modern solutions</li>
-						<li>We offer solutions to easily distribute digital giveaways with lead gen, as well as on-site contests</li>
-						<li>It’s easy to connect with other attendees through badge scanning and deep in-house event platform integration</li>
+						{% for li in spoller.description %}
+						<li>{{li}}</li>
+						{% endfor %}
 					</ul>
-				</div>
-			</div>
-
-			<div class="cs-list__item">
-				<div class="cs-list__head" data-spoller role="button" tabindex="0">
-					<div class="cs-list__icon">
-						<svg class="icon icon-connections">
-							<use xlink:href="img/sprite.svg#connections"></use>
-						</svg>
-					</div>
-					<div class="cs-list__title">Build connections in the community, create ambassadors of your brand</div>
-					<div class="cs-list__description">Get access to influencers and media people on the event programme, build relationships for productive collaboration</div>
-					<div class="cs-list__caret"></div>
-				</div>
-				<div class="cs-list__body styled-text">
-					<div class="cs-list__description">Get access to influencers and media people on the event programme, build relationships for productive collaboration</div>
+					{% endif %}
 
 				</div>
 			</div>
+			{% endfor %}
 
-			<div class="cs-list__item">
-				<div class="cs-list__head " data-spoller role="button" tabindex="0">
-					<div class="cs-list__icon">
-						<svg class="icon icon-star-wc">
-							<use xlink:href="img/sprite.svg#star-wc"></use>
-						</svg>
-					</div>
-					<div class="cs-list__title">Show your culture and attract Senior talent</div>
-					<div class="cs-list__description">Tell your story directly to a massive pool of talent, show what you’re building and why they should consider joining your team</div>
-					<div class="cs-list__caret"></div>
-				</div>
-				<div class="cs-list__body styled-text">
-					<div class="cs-list__description">Tell your story directly to a massive pool of talent, show what you’re building and why they should consider joining your team</div>
-
-				</div>
-			</div>
-
-			<div class="cs-list__item">
-				<div class="cs-list__head" data-spoller role="button" tabindex="0">
-					<div class="cs-list__icon">
-						<svg class="icon icon-across">
-							<use xlink:href="img/sprite.svg#across"></use>
-						</svg>
-					</div>
-					<div class="cs-list__title">10x your reach across many channels with a single sponsorship</div>
-					<div class="cs-list__description">Our industry-leading hybrid event format broadens the participation reach, further enhanced with a massive newsletter, advanced social campaigns </div>
-					<div class="cs-list__caret"></div>
-				</div>
-				<div class="cs-list__body styled-text">
-					<div class="cs-list__description">Our industry-leading hybrid event format broadens the participation reach, further enhanced with a massive newsletter, advanced social campaigns </div>
-					<ul>
-						<li>Conferences are filled with enthusiastic developers and early adopters with open mind towards modern solutions</li>
-						<li>We offer solutions to easily distribute digital giveaways with lead gen, as well as on-site contests</li>
-						<li>It’s easy to connect with other attendees through badge scanning and deep in-house event platform integration</li>
-					</ul>
-				</div>
-			</div>
 
 		</div>
 	</div>

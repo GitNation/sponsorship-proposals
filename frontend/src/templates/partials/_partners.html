@@ -1,7 +1,7 @@
 <section class="section sec-partners" id="partners">
 	<div class="container">
 		<div class="section__head">
-			<h3 class="section__suptitle">sponsoring partner</h3>
+			<h3 class="section__suptitle">{{info.sponsorsTitle}}</h3>
 		</div>
 
 		{% for item in sponsors %}
@@ -15,9 +15,9 @@
 		{% endfor %}
 
 		<div class="partners-promo">
-			<div class="partners-promo__title">Want to become our partner?</div>
+			<div class="partners-promo__title">{{info.partnersPromoTitle}}</div>
 			<div class="partners-promo__btn">
-				<a href="#" class="btn btn--lg btn--secondary">YES, I DO!</a>
+				<a href="mailto:sales@gitnation.org" class="btn btn--lg btn--secondary">{{info.partnersPromoBtnText}}</a>
 			</div>
 		</div>
 	</div>

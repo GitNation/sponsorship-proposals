@@ -1,150 +1,25 @@
-<!-- <section class="section bg-gray packages" id="packages">
-	<div class="container tab-wrap">
-		<h3 class="section__title">Sponsors packages and addons
-
-      {% if packagesTable|length %}
-        <div class="packages-switch owl-dots" id="packages-switch">
-          <div class="packages-switch__item owl-dot" data-slide="0">Grid</div>
-          <div class="packages-switch__item owl-dot" data-slide="1">Table</div>
-        </div>
-      {% endif %}
-
-			<div id="packages-switch"></div>
-		</h3>
-
-		<div class="owl-carousel package-slider">
-			<div class="package-slider__item" data-hash="package-grid">
-				<ul class="packege-tiles">
-					{% for item in packages %}
-					<li class="packege-tiles__item js-package-popup" data-aos="fade-up" data-aos-delay="{{item.animDelay}}" data-fancybox data-src="#{{item.packageId}}">
-						<img class="packege-tiles__pic" src="{{item.blockImage.asset.url}}">
-						<h3 class="packege-tiles__title">{{item.title}}</h3>
-						<p class="packege-tiles__desc">{{item.short | safe}}</p>
-						<p class="packege-tiles__tags">{{item.tags}}</p>
-					</li>
-					{% endfor %}
-				</ul>
-			</div>
-
-      {% if packagesTable|length %}
-        <div class="package-slider__item" data-hash="package-table">
-          <div class="table-wrapper">
-            <table class="package-table responsive">
-              <tbody>
-                {% include "partials/package/_header.html" %}
-
-                {% for feature in packageFeatures %}
-                  {% if feature.type === 'text' %}
-                    {% include "partials/package/_text-row.html" %}
-                  {% endif %}
-
-                  {% if feature.type === 'check' %}
-                    {% include "partials/package/_check-row.html" %}
-                  {% endif %}
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      {% endif %}
-		</div>
-
-    {% if packageSlides|length %}
-      <div class="owl-carousel packages-slider slider">
-        {% for item in packageSlides %}
-        <div class="packages-slider__item">
-          <div class="packages-slider__wrap">
-            <img class="packages-slider__pic" src="{{item.image.asset.url}}">
-            <p class="packages-slider__title">{{item.caption}}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-	</div>
-</section>
-
-
-{% for item in packages %}
-<div style="display: none;" id="{{item.packageId}}" class="package-popup">
-	<div class="package-popup__btn-close" data-fancybox-close>back</div>
-
-	<div class="package-popup__content">
-		<div class="package-popup__left">
-			<h3 class="package-popup__title">{{item.title}}</h3>
-			<p class="package-popup__price">{{item.price}}</p>
-			<h4 class="package-popup__subtitle">{{item.subtitle}}</h4>
-			<p class="package-popup__desc">{{item.description | safe}}</p>
-
-      {% if item.addons|length %}
-			<p class="package-popup__options">Add-ons at this level</p>
-
-			<ul class="stuff-list">
-				{% for stuffItem in item.addons %}
-				<li class="stuff-list__item">
-					<div class="stuff-list__left">
-						<img class="stuff-list__pic" src="{{stuffItem.image.asset.url}}">
-            {% if stuffItem.moreLink %}
-              <a class="stuff-list__more" href="{{stuffItem.moreLink}}" target="_blank">more photos</a>
-            {% endif %}
-					</div>
-					<div class="stuff-list__right">
-						<h4 class="stuff-list__title">{{stuffItem.title}}</h4>
-						<p class="stuff-list__tickets">{{stuffItem.details}}</p>
-						<p class="stuff-list__desc">{{stuffItem.description}}</p>
-					</div>
-				</li>
-				{% endfor %}
-			</ul>
-      {% endif %}
-		</div>
-		<div class="package-popup__right">
-			<img class="stuff-list__pic" src="{{item.rightImage.asset.url}}">
-
-			<ul class="checklist">
-				{% for check in item.checklist %}
-          {% if check.title %}
-            <li class="checklist__item">
-              <svg class="checklist__icon-{{check.checked}}" role="img" aria-hidden="true">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-{{check.checked}}"></use>
-              </svg>
-              {{check.title}}
-            </li>
-          {% endif %}
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-</div>
-{% endfor %} -->
-
-
 <section class="section sec-packages" id="packages">
 	<div class="container">
 		<div class="section__head">
-			<h3 class="section__suptitle">Sponsors packages and addons</h3>
+			<h3 class="section__suptitle">{{info.packagesTitle}}</h3>
 		</div>
 
 		<div class="packages">
-			<div class="packages__item packages__item--silver">
+			{% for package in packages %}
+			<div class="packages__item packages__item--{{package.title | trim | lower}}">
+				<a href="#popup-{{package.packageId}}" class="packages__link _open-modal">&nbsp;</a>
 				<div class="packages__head">
-					<div class="packages__title">Silver</div>
-					<div class="packages__price">from 7.000€</div>
-					<div class="packages__tags tags">
-						<span>hiring</span>
-						<span>branding</span>
-					</div>
+					<div class="packages__title">{{package.title | trim | replace('/', ' / ')}}</div>
+					<div class="packages__price">{{package.short | safe}}</div>
+					<div class="packages__tags tags">{{package.tags | replace('#', '<span>') | replace(' ', '</span>') | safe}}</div>
 				</div>
-				<div class="packages__content">
-					<ul>
-						<li>Logo placed on conference website</li>
-						<li>Logo placed on conference newsletters</li>
-						<li>Conference tickets (2 in-person)</li>
-						<li>Job ads placement</li>
-						<li>Sponsor recognition via social media</li>
-						<li>Featuring from MCs - grouped</li>
-						<li>Event partnership handbook</li>
-						<li class="active">Digital swag bag inclusion</li>
+				<div class="packages__content ">
+					<ul class="checklist">
+						{% for checklist in package.checklist %}
+						{% if checklist.title %}
+						<li class="{{'active' if checklist.checked}}">{{checklist.title}}</li>
+						{% endif %}
+						{% endfor %}
 					</ul>
 				</div>
 				<div class="packages__arrow">
@@ -154,134 +29,7 @@
 				</div>
 			</div>
 
-			<div class="packages__item packages__item--gold">
-				<div class="packages__head">
-					<div class="packages__title">Gold</div>
-					<div class="packages__price">from 15.000€</div>
-					<div class="packages__tags tags">
-						<span>hiring</span>
-						<span>branding</span>
-					</div>
-				</div>
-				<div class="packages__content">
-					<ul>
-						<li>Logo placed on conference website, newsletters & video recordings</li>
-						<li>Logo on print production & stage branding</li>
-						<li>Newsletter inclusion</li>
-						<li>Conference tickets</li>
-						<li>Job ads placement</li>
-						<li>Individual featuring from MCs</li>
-						<li>Sponsor recognition via social media</li>
-						<li>Video ad for rotation during breaks</li>
-						<li>Event partnership handbook</li>
-						<li class="active">Branded booth or 7-min lightning talk</li>
-						<li class="active">Goodie bag item</li>
-						<li class="active">Digital swag bag inclusion</li>
-						<li class="active">Lead capture</li>
-					</ul>
-				</div>
-				<div class="packages__arrow">
-					<svg class="icon icon-arrow-right">
-						<use xlink:href="img/sprite.svg#arrow-right"></use>
-					</svg>
-				</div>
-			</div>
-
-			<div class="packages__item packages__item--platinum">
-				<div class="packages__head">
-					<div class="packages__title">Platinum</div>
-					<div class="packages__price">from 25.000€</div>
-					<div class="packages__tags tags">
-						<span>hiring</span>
-						<span>talk</span>
-						<span>booth</span>
-						<span>leadcapture</span>
-						<span>workshop</span>
-						<span>premium</span>
-					</div>
-				</div>
-				<div class="packages__content">
-					<ul>
-						<li>Logo placed on conference website, newsletters & video recordings</li>
-						<li>Logo on print production & stage branding</li>
-						<li>Newsletter inclusion - individual highlight</li>
-						<li>Conference tickets (6 in-person, 4 remote)</li>
-						<li>Job ads placement</li>
-						<li>Sponsor recognition via social media</li>
-						<li>Individual featuring from MCs</li>
-						<li>Video ad for rotation during breaks</li>
-						<li>Special ideas on request</li>
-						<li class="active">Event partnership handbook</li>
-						<li class="active">Premium booth with backdrop + TV or Full talk slot</li>
-						<li class="active">Goodie bag item</li>
-						<li class="active">Digital swag bag inclusion</li>
-						<li class="active">Extended lead capture</li>
-						<li class="active">3h online workshop</li>
-					</ul>
-				</div>
-				<div class="packages__arrow">
-					<svg class="icon icon-arrow-right">
-						<use xlink:href="img/sprite.svg#arrow-right"></use>
-					</svg>
-				</div>
-			</div>
-
-			<div class="packages__item packages__item--party">
-				<div class="packages__head">
-					<div class="packages__title">Party</div>
-					<div class="packages__price">from 12.000€</div>
-					<div class="packages__tags tags">
-						<span>hiring</span>
-						<span>branding</span>
-					</div>
-				</div>
-				<div class="packages__content">
-					<ul>
-						<li>Logo placed on conference website</li>
-						<li>Logo on print production & stage branding</li>
-						<li>Newsletter inclusion</li>
-						<li>Job ads placement</li>
-						<li>Conference tickets (4 in-person, 2 remote)</li>
-						<li>Sponsor recognition via social media</li>
-						<li>Individual featuring from MCs</li>
-						<li>Video ad for rotation during breaks</li>
-						<li class="active">Digital swag bag inclusion</li>
-						<li class="active">Lead capture</li>
-					</ul>
-				</div>
-				<div class="packages__arrow">
-					<svg class="icon icon-arrow-right">
-						<use xlink:href="img/sprite.svg#arrow-right"></use>
-					</svg>
-				</div>
-			</div>
-
-			<div class="packages__item packages__item--diversity">
-				<div class="packages__head">
-					<div class="packages__title">Diversity</div>
-					<div class="packages__price">from 7.000€</div>
-					<div class="packages__tags tags">
-						<span>hiring</span>
-						<span>allyship</span>
-						<span>community</span>
-						<span>diversity</span>
-					</div>
-				</div>
-				<div class="packages__content">
-					<ul>
-						<li>20 conference passes for Diversity Scholarship Programme applicants</li>
-						<li>Company logo published in dedicated website section</li>
-						<li>Special “thank you” on-stage</li>
-						<li>Special “thank you” social promo</li>
-
-					</ul>
-				</div>
-				<div class="packages__arrow">
-					<svg class="icon icon-arrow-right">
-						<use xlink:href="img/sprite.svg#arrow-right"></use>
-					</svg>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>

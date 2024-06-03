@@ -4,8 +4,6 @@
 		margin-top: 69px
 		+md
 			margin-top: 30px
-		+sm
-			margin-top: 20px
 
 		.tab-block__nav, .graphics, .graphics-circle
 			+sm
@@ -28,7 +26,7 @@
 		padding-top: 30px
 	&__item
 		flex: 1
-		max-width: 166px
+
 		min-width: 120px
 
 	&__inner
@@ -40,10 +38,15 @@
 		flex-direction: column
 		justify-content: flex-end
 		overflow: hidden
+		max-height: 390px
+		position: relative
 		+md
 			aspect-ratio: 1/2
 
 	&__progress
+		position: absolute
+		bottom: 0
+		width: 100%
 		background: var(--clr-theme)
 		animation: column-anim 0.7s ease-out forwards
 
@@ -54,7 +57,11 @@
 		line-height: 1
 		font-weight: 500
 		flex: none
-		margin-bottom: 15px
+
+		position: sticky
+		z-index: 3
+		bottom: calc(var(--progress) + 15px)
+		min-height: 1px
 		+lg
 			font-size: 42px
 		+md
@@ -82,7 +89,6 @@
 		padding-top: 30px
 	&__item
 		flex: 1
-		max-width: 292px
 		min-width: 140px
 	&__inner
 		padding-top: 30px
