@@ -1,0 +1,189 @@
+.packages
+	&__item
+		position: relative
+		border-radius: 30px
+		background: var(--clr-black)
+		outline: 1px solid var(--clr-black-300)
+		padding: 45px
+		display: flex
+		align-items: center
+		min-height: 350px
+		gap: 45px
+		z-index: 1
+		transition: border-color 0.2s linear
+		+lg
+			padding: 40px
+		+md
+			padding: 30px
+			min-height: 202px
+			border-radius: 20px
+			align-items: stretch
+		+sm
+			min-height: 154px
+			padding: 18px 20px 20px
+
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			pointer-events: none
+			border-radius: inherit
+			opacity: 0
+			transition: opacity 0.2s linear
+			box-shadow: 0px 0px 50px 0px var(--clr-theme)
+		+rmin(1025px)
+			&:hover, &:focus-visible
+				outline-color: var(--clr-theme)
+				z-index: 2
+				&:after
+					opacity: 0.2
+				.packages__arrow
+					opacity: 1
+			&--silver
+				&:hover, &:focus-visible
+					outline-color: #5B5B5B
+				&:after
+					box-shadow: 0px 0px 70px 0px #fff
+				.packages__arrow
+					background: #494949
+			&--gold
+				&:hover, &:focus-visible
+					outline-color: #955B17
+				&:after
+					box-shadow: 0px 0px 70px 0px #955B17
+				.packages__arrow
+					background: #D6A426
+			&--platinum
+				&:hover, &:focus-visible
+					outline-color: #FEFEFE
+				&:after
+					box-shadow: 0px 0px 70px 0px #fff
+				.packages__arrow
+					background: #FFFFFF
+	&__link
+		+coverdiv
+		display: block
+		text-decoration: none
+		z-index: 4
+	&__head
+		width: calc(48% - 22px)
+		+md
+			width: 100%
+			padding-right: 70px
+			display: flex
+			flex-direction: column
+		+sm
+			padding-right: 40px
+	&__content
+		flex: 1
+		padding-right: 60px
+		+md
+			display: none
+
+	&__title
+		font-size: 72px
+		text-transform: uppercase
+		line-height: .9
+		font-weight: 500
+
+		+lg
+			font-size: 62px
+		+sm
+			font-size: clamp(32px, 10vw,62px)
+			line-height: 0.8
+	&__price
+		font-size: 28px
+		margin-top: 10px
+		+lg
+			font-size: 24px
+		+sm
+			font-size: 18px
+			margin-top: 6px
+	&__tags
+		margin-top: 15px
+		+md
+			margin-top: auto
+			padding-top: 10px
+
+	&__arrow
+		position: absolute
+		bottom: 30px
+		right: 30px
+		width: 60px
+		height: 60px
+		display: flex
+		align-items: center
+		justify-content: center
+		background: var(--clr-theme)
+		border-radius: 50%
+		opacity: 0
+		transition: opacity 0.2s linear
+		+md
+			opacity: 1
+			width: 50px
+			height: 50px
+			background: transparent
+			border: 1px solid var(--clr-black-300)
+			bottom: 20px
+			right: 20px
+		+sm
+			width: 40px
+			height: 40px
+			bottom: 10px
+			right: 10px
+		.icon
+			font-size: 22px
+			color: var(--clr-black)
+			+md
+				color: #fff
+				font-size: 18px
+			+sm
+				font-size: 16px
+
+.tags
+	display: flex
+	flex-wrap: wrap
+	gap: 5px 1px
+	span
+		background: var(--clr-black-100)
+		white-space: nowrap
+		line-height: 30px
+		padding: 0 15px
+		border-radius: 30px
+		font-size: 14px
+		color: var(--clr-gray-100)
+		+sm
+			line-height: 20px
+			font-size: 12px
+			padding: 0 10px
+		+xxs
+			font-size: 10px
+			padding: 0 8px
+
+.checklist
+	list-style-type: none
+	li
+		position: relative
+		padding-left: 27px
+		font-size: 14px
+		color: var(--clr-gray-100)
+		margin-bottom: 7px
+		&:last-child
+			margin-bottom: 0
+		&:before
+			content: ''
+			position: absolute
+			top: 0.08em
+			left: 0
+			background: url('/img/check.svg') no-repeat center
+			background-size: contain
+			width: 1.3em
+			height: 1.3em
+		&.active
+			color: #fff
+			&:before
+				background: url(../img/Lightning.svg) no-repeat center
+				top: 0.1em

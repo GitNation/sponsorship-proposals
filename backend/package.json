@@ -8,6 +8,7 @@
     "sanity-login": "sanity login",
     "start": "sanity start",
     "test": "sanity check",
+    "deploy:local": "sanity graphql deploy --dataset prod --tag local --generation gen1",
     "deploy": "sanity graphql deploy --playground",
     "deploy:studio": "sanity deploy"
   },

@@ -1,0 +1,96 @@
+
+.reviews
+	position: relative
+.reviews-swiper
+	margin-top: 50px
+	+md
+		margin-top: 30px
+	+sm
+		margin-top: 20px
+	&-navigation
+		position: absolute
+		bottom: 0
+		right: 0
+		z-index: 2
+		display: flex
+		gap: 1px
+		+sm
+			position: relative
+			bottom: auto
+			right: auto
+			justify-content: center
+			margin-top: 25px
+	&__next, &__prev
+		width: 60px
+		height: 60px
+		border-radius: 50%
+		border: 1px solid var(--clr-black-300)
+		display: flex
+		align-items: center
+		justify-content: center
+		background: none
+		.icon
+			font-size: 25px
+			color: #fff
+			&-chevron-right
+				right: -2px
+			&-chevron-left
+				left: -2px
+		&.swiper-button-disabled
+			.icon
+				color: var(--clr-black-300)
+		&:not(.swiper-button-disabled):hover, &:not(.swiper-button-disabled):focus-visible
+			background: var(--clr-theme)
+			border-color: var(--clr-theme)
+			.icon
+				color: var(--clr-black)
+.review
+	&__text
+		font-size: 28px
+		line-height: 1.25
+		font-weight: 300
+		max-width: 870px
+		+md
+			line-height: 1.2
+		+sm
+			font-size: 18px
+			line-height: 1.4
+		&:before
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			margin-right: 10px
+			height: 2px
+			width: 67px
+			background: #fff
+			+sm
+				width: 40px
+	&__author
+		margin-top: 30px
+		margin-right: 200px
+		+md
+			margin-top: 25px
+		+sm
+			margin-top: 15px
+			margin-right: 0
+
+.r-author
+	display: flex
+	align-items: center
+	gap: 25px
+	&__img
+		flex: none
+		width: 60px
+		height: 60px
+		img
+			width: 100%
+			height: 100%
+			border-radius: 50%
+			object-fit: cover
+
+	&__name
+		text-transform: uppercase
+		font-size: 16px
+	&__company
+		font-size: 14px
+		color: var(--clr-gray-100)

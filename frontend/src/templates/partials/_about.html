@@ -1,0 +1,30 @@
+<section class="section sec-about">
+	<div class="container">
+		<div class="section__head">
+			<h3 class="section__suptitle">{{info.aboutTitle}}</h3>
+			<h2 class="section__title">{{info.aboutSubTitle}}</h2>
+		</div>
+		{% if info.aboutDescription %}
+		<div class="about__content">
+			<div class="about__content-left">
+				{{info.aboutDescription}}
+			</div>
+			<div class="about__content-right styled-text styled-text--gray">
+				{{ info.aboutTextRight | safe }}
+
+			</div>
+		</div>
+		{% endif %}
+
+		{% if info.aboutDescription2 %}
+		<div class="about__content">
+			<div class="about__content-left">
+				{{info.aboutDescription2}}
+			</div>
+			<div class="about__content-right styled-text styled-text--gray">
+				{{ info.aboutTextRight2 | safe }}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</section>
