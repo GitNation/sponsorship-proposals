@@ -28,7 +28,7 @@ gulp.task("copy:rootfiles", function () {
 gulp.task("copy:img", function () {
 	return gulp
 		.src([
-			config.src.img + "/**/*.{jpg,png,jpeg,svg,gif,ico}",
+			config.src.img + "/**/*.{jpg,png,jpeg,svg,gif,ico,webp}",
 			"!" + config.src.img + "/svgo/**/*.*",
 		])
 		.pipe(gulp.dest(config.dest.img));
@@ -36,7 +36,7 @@ gulp.task("copy:img", function () {
 gulp.task("copy:pic", function () {
 	return gulp
 		.src([
-			config.src.pic + "/**/*.{jpg,png,jpeg,svg,gif,ico}",
+			config.src.pic + "/**/*.{jpg,png,jpeg,svg,gif,ico,webp}",
 			"!" + config.src.pic + "/svgo/**/*.*",
 		])
 		.pipe(gulp.dest(config.dest.pic));
