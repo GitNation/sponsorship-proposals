@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 var svgmin = require("gulp-svgmin");
-var cheerio = require("gulp-cheerio");
+
 var svgSprite = require("gulp-svg-sprite");
 var config = require("../config");
 
@@ -12,16 +12,6 @@ gulp.task("svgSprite", function () {
 				js2svg: {
 					pretty: true,
 				},
-			})
-		)
-		.pipe(
-			cheerio({
-				run: function ($) {
-					$("[fill]").removeAttr("fill");
-					$("[stroke]").removeAttr("stroke");
-					$("[style]").removeAttr("style");
-				},
-				parserOptions: { xmlMode: true },
 			})
 		)
 
