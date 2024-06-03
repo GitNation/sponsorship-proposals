@@ -1,0 +1,76 @@
+.sec-follow-us
+	&__img
+		margin-bottom: 70px
+		+md
+			margin-left: calc(var(--_container) * -1)
+			margin-right: calc(var(--_container) * -1)
+			margin-bottom: 45px
+		+sm
+			margin-bottom: 25px
+
+		img
+			border-radius: 30px
+			width: 100%
+			min-height: 254px
+			object-fit: cover
+			+md
+				border-radius: 0
+	.section__head
+		text-align: center
+	.section__title
+		margin-left: auto
+		margin-right: auto
+	.section__description
+		margin-left: auto
+		margin-right: auto
+		max-width: 420px
+		font-size: 16px
+		color: var(--clr-gray-100)
+		+sm
+			font-size: 14px
+
+.follow-us
+	margin-left: auto
+	margin-right: auto
+	margin-top: 40px
+	max-width: 470px
+	position: relative
+	+md
+		margin-top: 25px
+	&__input
+		width: 100%
+		display: block
+		font-family: inherit
+		color: #fff
+		font-size: 18px
+		height: 60px
+		border-radius: 100px
+		background: transparent
+		border: 1px solid var(--clr-black-300)
+		padding: 0 190px 0 30px
+		+sm
+			padding-right: 30px
+		&::placeholder
+			color: #fff
+	&__btn
+		position: absolute
+		top: -1px
+		right: -1px
+		height: 60px
+		width: 165px
+		padding: 0 10px
+		text-transform: uppercase
+		color: var(--clr-theme)
+		font-weight: 500
+		font-size: 14px
+		+sm
+			position: relative
+			top: auto
+			right: auto
+			width: 100%
+			display: flex
+			margin-top: 10px
+		&:hover, &:focus-visible
+			background: var(--clr-theme)
+			color: var(--clr-black)
+			border-color: var(--clr-theme)

@@ -1,0 +1,14 @@
+<section class="section sec-features" id="features">
+	<div class="container">
+		<div class="swiper features-swiper">
+			<div class="swiper-wrapper">
+				{% for item in packageSlides %}
+				<div class="swiper-slide feature" style="background-image: url('{{item.image.asset.url}}');">
+					<div class="feature__text">{{item.caption}}</div>
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+</section>

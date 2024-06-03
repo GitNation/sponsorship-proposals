@@ -1,0 +1,62 @@
+<section class="section sec-ecosystem" id="ecosystem">
+	<div class="container">
+		<div class="section__head">
+			<h3 class="section__suptitle">{{info.shopTitle}}</h3>
+			<h2 class="section__title">{{info.shopSubtitle}}</h2>
+			{% if info.shopDescription %}
+			<div class="section__description">
+				{{info.shopDescription}}
+			</div>
+			{% endif %}
+			{% if info.shopButtonText %}
+			<div class="section__btn">
+				<a href="{{info.shopButtonUrl}}" class="btn btn--outline-accent ttu">{{info.shopButtonText}}</a>
+			</div>
+			{% endif %}
+		</div>
+
+		<div class="swiper conferences-swiper">
+			<div class="swiper-wrapper">
+				{% for item in conferences %}
+				<a href="{{item.url}}" class="swiper-slide conferences-item" target="_blank">
+
+					<div class="conferences-item__img">
+						<img src="{{item.img.asset.url}}" alt="">
+					</div>
+					<div class="conferences-item__body">
+						<div class="conferences-item__title">{{item.title}}</div>
+						<div class="conferences-item__date">{{item.date}}</div>
+					</div>
+					<div class="conferences-item__arrow">
+						<svg class="icon icon-arrow-right">
+							<use xlink:href="img/sprite.svg#arrow-right"></use>
+						</svg>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		{% if not info.isBannerShow %}
+		<div class="banner" style="background-image: url('{{info.bannerBg.asset.url}}');">
+			<a href="{{info.bannerUrl}}" class="banner__link">&nbsp;</a>
+			<div class="banner__head">
+				<div class="banner__logo">
+					<img src="{{info.bannerLogo.asset.url}}" alt="" role="presentation">
+				</div>
+				<div class="banner__date">{{info.bannerDate}}</div>
+			</div>
+			<div class="banner__content">
+				<div class="banner__title">{{info.bannerTitle}}</div>
+				<div class="banner__text">{{info.bannerDescription}}</div>
+				<div class="banner__tags">
+					{% for tag in info.bannerTags %}
+					<span>{{tag}}</span>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+		{% endif %}
+	</div>
+</section>

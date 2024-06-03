@@ -1,0 +1,78 @@
+{% for item in packages %}
+
+<div id="popup-{{item.packageId}}" class="_modal popup  ">
+	<div class="popup__body">
+		<div class="popup__content _modal__content">
+
+
+			<div class="package-popup">
+				<div class="package-popup__left">
+					<button class="popup__close _close-modal" aria-label="close">
+						<svg class="icon icon-back">
+							<use xlink:href="img/sprite.svg?2#back"></use>
+						</svg>
+						<span>Back</span>
+					</button>
+					<div class="package-popup__head">
+						<h2 class="package-popup__title">{{item.title | trim | replace('/', ' / ')}}</h2>
+						<p class="package-popup__price">{{item.price}}</p>
+					</div>
+					<h3 class="package-popup__subtitle">{{item.subtitle}}</h3>
+					<div class="package-popup__text styled-text">{{item.description | safe}}</div>
+
+					<div class="package-popup__tags tags">{{item.tags | replace('#', '<span>') | replace(' ', '</span>') | safe}}</div>
+
+					{% if item.videoPreRollUrl %}
+					<div class="package-popup__video-link">
+						<a href="{{item.videoPreRollUrl}}">
+							<svg class="icon icon-youtube">
+								<use xlink:href="img/sprite.svg#youtube"></use>
+							</svg>
+							<span>Video pre-roll</span>
+						</a>
+					</div>
+					{% endif %}
+
+					{% if item.addons | length %}
+					<div class="package-popup__addons addons">
+						<h2 class="addons__title">Add-ons at this level</h2>
+
+						<div class="addons__list">
+							{% for addon in item.addons %}
+							<div class="addon">
+								<div class="addon__picture">
+									<img class="addon__img" src="{{addon.image.asset.url}}">
+									{% if addon.moreLink %}
+									<a class="addon__more" href="{{addon.moreLink}}" target="_blank">more photos</a>
+									{% endif %}
+								</div>
+								<div class="addon__content">
+									<h4 class="addon__title">{{addon.title}}</h4>
+									<div class="addon__tickets"><span>{{addon.details}}</span></div>
+									<div class="addon__text">{{addon.description | safe}}</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						{% endif %}
+					</div>
+				</div>
+				<div class="package-popup__right">
+					<img class="package-popup__pic" src="{{item.rightImage.asset.url}}">
+
+					<ul class="checklist">
+						{% for check in item.checklist %}
+						{% if check.title %}
+						<li class="{{'active' if check.checked}}">
+							{{check.title}}
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endfor %}

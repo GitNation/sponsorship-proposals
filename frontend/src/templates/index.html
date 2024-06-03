@@ -1,33 +1,24 @@
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-
-{% include "partials/_header.html" %}
-
-	<main class="content">
-
-		{% include "partials/_intro.html" %}
-
-    {% if keyFeatures %}
-      {% include "partials/_motivation-key-stats.html" %}
-      {% include "partials/_stats.html" %}
-      {% include "partials/_motivation.html" %}
-    {% else %}
-      {% include "partials/_motivation.html" %}
-      {% include "partials/_stats.html" %}
-    {% endif %}
-
-
-    {% if not hideTilesBlock %}
-		  {% include "partials/_tile-stats.html" %}
-    {% endif %}
-
-		{% include "partials/_packages.html" %}
-		{% include "partials/_partners.html" %}
-
-	</main><!-- .content -->
-
+<main class="content">
+	{% include "partials/_hero.html" %}
+	{% include "partials/_conference-sponsor.html" %}
+	{% include "partials/_numbers.html" %}
+	{% include "partials/_packages.html" %}
+	{% include "partials/_ecosystem.html" %}
+	{% include "partials/_demographics.html" %}
+	{% include "partials/_follow-us.html" %}
+	<div class="devider"></div>
+	{% include "partials/_reviews.html" %}
+	{% include "partials/_features.html" %}
+	{% include "partials/_partners.html" %}
+	{% if not info.isAboutShow %}
+	{% include "partials/_about.html" %}
+	{% endif %}
+</main>
 
 {% include "partials/_footer.html" %}
+{% include "partials/popups/_popup-package.html" %}
 
 {% endblock %}

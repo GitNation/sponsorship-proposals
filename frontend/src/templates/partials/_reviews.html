@@ -1,0 +1,47 @@
+<section class="section sec-reviews" id="reviews">
+	<div class="container">
+		<div class="section__head">
+			<h3 class="section__suptitle">{{info.partnersTitle}}</h3>
+		</div>
+
+		<div class="reviews">
+			<div class="swiper reviews-swiper">
+				<div class="swiper-wrapper">
+					{% for recommended in partners %}
+					<div class="swiper-slide review">
+
+						<div class="review__text">
+							{{recommended.text}}
+						</div>
+						<div class="review__footer">
+							<div class="review__author r-author">
+								<div class="r-author__img">
+									<img src="{{recommended.image.asset.url}}" alt="{{recommended.name}}">
+								</div>
+								<div class="r-author__content">
+									<div class="r-author__name">{{recommended.name}}</div>
+									<div class="r-author__company">{{recommended.job}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="reviews-swiper-navigation">
+				<button class="reviews-swiper__prev">
+					<svg class="icon icon-chevron-left">
+						<use xlink:href="img/sprite.svg#chevron-left"></use>
+					</svg>
+				</button>
+				<button class="reviews-swiper__next">
+					<svg class="icon icon-chevron-right">
+						<use xlink:href="img/sprite.svg#chevron-right"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+	</div>
+</section>

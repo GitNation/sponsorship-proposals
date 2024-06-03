@@ -1,0 +1,54 @@
+<section class="section conference-sponsor">
+	<div class="container">
+		<div class="section__head">
+			<h3 class="section__suptitle">{{info.motivationTitle}}</h3>
+			<h2 class="section__title">{{info.motivationSubTitle}}</h2>
+		</div>
+		<div class="conference-sponsor__content">
+			<div class="conference-sponsor__content-left section__description">
+				{{info.motivationDescription}}
+			</div>
+			{% if info.motivationList.length > 0 %}
+			<div class="conference-sponsor__content-right styled-text">
+				<ul>
+					{% for item in info.motivationList %}
+					<li>{{item}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+		</div>
+
+		<div class="cs-list spoller" data-spollers data-one-spoller>
+			{% for spoller in features %}
+			<div class="cs-list__item">
+				<div class="cs-list__head " data-spoller role="button" tabindex="{{loop.index -1}}">
+					<div class="cs-list__icon">
+						{{spoller.svg | safe}}
+					</div>
+					<div class="cs-list__title">{{spoller.title}}</div>
+					{% if spoller.supTitle %}
+					<div class="cs-list__description">{{spoller.supTitle}}</div>
+					{% endif %}
+					<div class="cs-list__caret"></div>
+				</div>
+				<div class="cs-list__body styled-text">
+					{% if spoller.supTitle %}
+					<div class="cs-list__description">{{spoller.supTitle}}</div>
+					{% endif %}
+					{% if spoller.description.length > 0 %}
+					<ul>
+						{% for li in spoller.description %}
+						<li>{{li}}</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+
+				</div>
+			</div>
+			{% endfor %}
+
+
+		</div>
+	</div>
+</section>

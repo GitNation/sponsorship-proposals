@@ -1,26 +1,45 @@
-<footer class="footer section" id="footer">
-	<div class="container">
-		<h3 class="section__title">Follow us</h3>
-		<div class="footer__socials">
-			<ul class="social social--theme">
-				{% if info.twitterUrl %}<li class="social__item"><a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('tw')}}</a></li>{% endif %}
-				{% if info.facebookUrl %}<li class="social__item"><a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a></li>{% endif %}
-				{% if info.youtubeUrl %}<li class="social__item"><a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('yt')}}</a></li>{% endif %}
-				{% if info.mediumUrl %}<li class="social__item"><a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('med')}}</a></li>{% endif %}
-				{% if info.slackUrl %}<li class="social__item"><a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a></li>{% endif %}
-			</ul>
+<footer class="footer " id="footer">
+	<div class="footer__top">
+		<div class="container">
+
+			<h3 class="section__suptitle">Follow us</h3>
+			<div class="footer__socials">
+				<div class="social">
+
+					{% if info.facebookUrl %}<a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a>{% endif %}
+					{% if info.twitterUrl %}<a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('tw')}}</a>{% endif %}
+					{% if info.youtubeUrl %}<a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('yt')}}</a>{% endif %}
+					{% if info.mediumUrl %}<a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('med')}}</a>{% endif %}
+					{% if info.slackUrl %}<a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a>{% endif %}
+					{% if info.portal %}<a href="{{ info.portal }}" class="social__link" target="_blank">{{mixins.icon('gitnation')}}</a>{% endif %}
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="footer__basement" style="background-image: url(img/footer-bg.png)">
-		<div class="footer__logo">
-			<div class="f-logo">
-				<span class="f-logo__label">Event by</span>
-				<span class="f-logo__icon">
+	<div class="footer__basement">
+		<div class="container">
+
+			<a href="https://gitnation.org" target="_blank" class="footer__logo f-logo">
+				<div class="f-logo__icon">
 					<img src="img/f-logo.svg" alt="Frontend nation">
-				</span>
-				<a href="https://gitnation.org" class="f-logo__author">GitNation</a>
+				</div>
+				<div class="f-logo__content">
+					<div class="f-logo__label">Event by</div>
+					<div class="f-logo__author">GitNation</div>
+				</div>
+			</a>
+
+			<div class="footer__text">
+				Do you like our mission? Would you like to contribute and join forces? Let's talk! We're looking for partnership opportunities and are eager to hear any of your ideas.
 			</div>
+
+			<div class="footer__btn">
+				<a href="mailto:events@gitnation.org" class="btn btn--outline btn--block">
+					events@gitnation.org
+				</a>
+			</div>
+
 		</div>
 	</div>
 </footer>

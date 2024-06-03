@@ -1,0 +1,34 @@
+<section class="section sec-numbers" id="numbers">
+	<div class="container">
+		<div class="section__head">
+			<h3 class="section__suptitle">{{info.tilesTitle}}</h3>
+			<h2 class="section__title">Event edition reach</h2>
+		</div>
+
+		<div class="numbers">
+			{% for num in tileStats %}
+
+			<div class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--bg' if num.isBackgroundColor}} {{'numbers__item--lg' if num.isLarge}}" style="--numbers-order: {{loop.index}}">
+				<div class="numbers__head">
+					<div class="numbers__title">{{num.title}}</div>
+					{% if num.description %}
+					<div class="numbers__description">{{num.description}}</div>
+					{% endif %}
+				</div>
+				{% if num.nums %}<div class="numbers__val">{{num.nums}}</div>{% endif %}
+				{% if num.img %}
+				<div class="numbers__img">
+					<img src="{{num.img}}" alt="{{num.title}}" role="presentation">
+				</div>
+				{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+
+		<!-- <div class="section__head">
+			<h2 class="section__title">Recorded content reach</h2>
+		</div> -->
+
+
+	</div>
+</section>

@@ -1,0 +1,91 @@
+
+.footer
+
+	padding-top: 30px
+	position: relative
+	+md
+		padding-top: 0
+	&:before
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: calc(100% + 80px)
+		background: url('../img/footer-bg.webp') repeat-x bottom center
+		background-size: auto
+		pointer-events: none
+	&__top
+		.container
+			display: flex
+			align-items: center
+			+sm
+				flex-direction: column
+				align-items: flex-start
+				gap: 25px
+
+	&__socials
+		flex: none
+		width: 50%
+		margin-left: auto
+		+md
+			width: auto
+		+sm
+			margin-left: 0
+
+	&__basement
+		margin-top: calc(var(--clr-section-gap) - 20px)
+		padding: 33px 0
+		border-top: 1px solid var(--clr-black-300)
+		.container
+			display: grid
+			align-items: flex-start
+			gap: 100px
+			grid-template-columns: auto 1fr auto
+			+lg
+				gap: 60px
+			+md
+				grid-template-columns: auto 1fr
+				gap: 30px 80px
+			+sm
+				grid-template-columns: 1fr
+
+	&__logo
+		width: min-content
+		+sm
+			order: 1
+			margin-left: auto
+			margin-right: auto
+
+	&__text
+		font-size: 14px
+		color: var(--clr-gray-100)
+		+md
+			grid-column: 1/3
+			grid-row: 1/2
+		+sm
+			font-size: 12px
+			grid-column: 1/2
+
+.f-logo
+	display: flex
+	align-items: center
+	gap: 12px
+	color: #fff
+	text-decoration: none
+	&__icon
+		flex: none
+		width: 50px
+	&__content
+		flex: none
+		white-space: nowrap
+		padding-top: 5px
+
+	&__label
+		font-size: 12px
+		line-height: 1
+		margin-bottom: 7px
+	&__author
+		font-size: 23px
+		font-weight: 500
+		line-height: 1

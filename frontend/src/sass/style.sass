@@ -1,0 +1,63 @@
+@import "helpers/variables"
+@import "helpers/mixins"
+@import "helpers/normalize"
+
+html
+	&.lock, &.lock body
+		overflow: hidden
+
+body
+	width: 100%
+	background: var(--clr-black)
+	color: var(--clr-white)
+	font-family: var(--ff)
+	font-size: 16px
+	line-height: 1.4
+	min-height: 100%
+	position: relative
+
+	--clr-section-gap: 150px
+	+md
+		--clr-section-gap: 96px
+	+sm
+		--clr-section-gap: 55px
+		font-size: 14px
+.container
+	--_container: 40px
+	position: relative
+	max-width: 1246px
+	margin: 0 auto
+	padding-left: var(--_container)
+	padding-right: var(--_container)
+	+lg
+		max-width: 1020px
+	+sm
+		--_container: 20px
+	+xxs
+		--_container: 15px
+
+.wrapper
+	overflow: clip
+
+@import helpers/fonts
+@import helpers/icons
+// @import "vendor/aos";
+
+@import partials/forms
+@import partials/buttons
+@import partials/common
+@import partials/sections
+@import partials/hero
+@import partials/conference-sponsor
+@import partials/numbers
+@import partials/packages
+@import partials/ecosystem
+@import partials/demographics
+@import partials/follow-us
+@import partials/reviews
+@import partials/features
+@import partials/partners
+@import partials/about
+@import partials/popups
+
+@import "partials/footer"
