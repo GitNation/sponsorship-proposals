@@ -63,7 +63,7 @@
 					<ul class="checklist">
 						{% for check in item.checklist %}
 						{% if check.title %}
-						<li class="{{'active' if check.checked}}">
+						<li class="{{'active' if checklist.checked === 'yes'}}">
 							{{check.title}}
 						</li>
 						{% endif %}

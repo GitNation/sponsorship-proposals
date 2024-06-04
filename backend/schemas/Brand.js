@@ -383,6 +383,44 @@ export default {
         },
       ],
     },
+    {
+      title: 'Title second',
+      name: 'tilesTitle2',
+      type: 'string',
+      fieldset: 'tiles',
+    },
+
+    {
+      title: 'Stat Tiles second',
+      name: 'tales2',
+      fieldset: 'tiles',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'statTile' }],
+        },
+      ],
+    },
+    {
+      title: 'Title third',
+      name: 'tilesTitle3',
+      type: 'string',
+      fieldset: 'tiles',
+    },
+
+    {
+      title: 'Stat Tiles third',
+      name: 'tales3',
+      fieldset: 'tiles',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'statTile' }],
+        },
+      ],
+    },
     // packages
     {
       title: 'Title',

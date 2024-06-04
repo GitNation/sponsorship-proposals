@@ -17,7 +17,7 @@
 					<ul class="checklist">
 						{% for checklist in package.checklist %}
 						{% if checklist.title %}
-						<li class="{{'active' if checklist.checked}}">{{checklist.title}}</li>
+						<li class="{{'active' if checklist.checked === 'yes'}}">{{checklist.title}}</li>
 						{% endif %}
 						{% endfor %}
 					</ul>
