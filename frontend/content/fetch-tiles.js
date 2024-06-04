@@ -31,7 +31,6 @@ const queryPages = /* GraphQL */ `
 				isBackgroundColor
 				isImgCenter
 			}
-
 			tales3 {
 				image {
 					asset {
@@ -56,7 +55,6 @@ const fetchData = async (client, vars) => {
 	const data = await client.request(queryPages, vars).then((res) => res.data);
 
 	const { animDelay, hideTilesBlock } = data;
-
 	const tales = data.tales.map(
 		(
 			{
@@ -83,62 +81,66 @@ const fetchData = async (client, vars) => {
 			animation: !(ind % 2) ? "fade-up" : "fade-down",
 		})
 	);
-	const tales2 = data.tales2.map(
-		(
-			{
-				image,
+	const tales2 =
+		data.tales2 &&
+		data.tales2.map(
+			(
+				{
+					image,
+					title,
+					name,
+					value,
+					description,
+					isBackgroundColor,
+					isLarge,
+					isImgCenter,
+				},
+				ind
+			) => ({
 				title,
 				name,
-				value,
+				nums: value,
 				description,
-				isBackgroundColor,
+				animDelay,
 				isLarge,
+				isBackgroundColor,
 				isImgCenter,
-			},
-			ind
-		) => ({
-			title,
-			name,
-			nums: value,
-			description,
-			animDelay,
-			isLarge,
-			isBackgroundColor,
-			isImgCenter,
-			img: getUrl(image),
-			animation: !(ind % 2) ? "fade-up" : "fade-down",
-		})
-	);
-	const tales3 = data.tales3.map(
-		(
-			{
-				image,
+				img: getUrl(image),
+				animation: !(ind % 2) ? "fade-up" : "fade-down",
+			})
+		);
+	const tales3 =
+		data.tales3 &&
+		data.tales3.map(
+			(
+				{
+					image,
+					title,
+					name,
+					value,
+					description,
+					isBackgroundColor,
+					isLarge,
+					isImgCenter,
+				},
+				ind
+			) => ({
 				title,
 				name,
-				value,
+				nums: value,
 				description,
-				isBackgroundColor,
+				animDelay,
 				isLarge,
+				isBackgroundColor,
 				isImgCenter,
-			},
-			ind
-		) => ({
-			title,
-			name,
-			nums: value,
-			description,
-			animDelay,
-			isLarge,
-			isBackgroundColor,
-			isImgCenter,
-			img: getUrl(image),
-			animation: !(ind % 2) ? "fade-up" : "fade-down",
-		})
-	);
+				img: getUrl(image),
+				animation: !(ind % 2) ? "fade-up" : "fade-down",
+			})
+		);
 	return {
 		tileStats: tales,
-		tileStats2: tales2,
-		tileStats3: tales3,
+		tileStats2: tales2 ? tales2 : null,
+		tileStats3: tales3 ? tales3 : null,
 		animDelay,
 		hideTilesBlock,
 	};
