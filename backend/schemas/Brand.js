@@ -365,6 +365,12 @@ export default {
     },
 
     {
+      title: 'Section Title ',
+      name: 'tilesHeadTitle',
+      type: 'string',
+      fieldset: 'tiles',
+    },
+    {
       title: 'Title',
       name: 'tilesTitle',
       type: 'string',
@@ -468,9 +474,8 @@ export default {
     {
       title: 'Button url',
       name: 'shopButtonUrl',
-      type: 'url',
+      type: 'string',
       fieldset: 'oneStopShop',
-      description: 'url',
     },
     {
       title: 'Conferences',

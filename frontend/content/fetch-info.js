@@ -46,6 +46,7 @@ const queryPages = /* GraphQL */ `
 			motivationSubTitle
 			motivationDescription
 			motivationList
+			tilesHeadTitle
 			tilesTitle
 			tilesTitle2
 			tilesTitle3
