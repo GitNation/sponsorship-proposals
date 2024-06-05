@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       // Optional parameters
       loop: false,
       slidesPerView: 'auto',
-      spaceBetween: 1,
+      spaceBetween: 0,
     });
   }
 

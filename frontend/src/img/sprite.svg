@@ -15,7 +15,7 @@
 </symbol><symbol viewBox="0 0 15 26" fill="none" id="chevron-left" xmlns="http://www.w3.org/2000/svg">
     <path d="M13 2L2.182 12.819 13 23.636"/>
 </symbol><symbol viewBox="0 0 15 26" fill="none" id="chevron-right" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2l10.818 10.819L2 23.636" stroke="#fff" stroke-width="2" stroke-linecap="square"/>
+    <path d="M2 2l10.818 10.819L2 23.636"/>
 </symbol><symbol viewBox="0 0 59 59" fill="none" id="connections" xmlns="http://www.w3.org/2000/svg">
     <circle cx="29" cy="30.5" r="20.152" transform="rotate(45 29 30.5)" stroke="#3D3D3D" stroke-width="6"/>
     <circle cx="29" cy="30.017" r="8.497" transform="rotate(45 29 30.017)" stroke="#3D3D3D" stroke-width="6"/>
