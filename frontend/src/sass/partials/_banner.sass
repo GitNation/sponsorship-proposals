@@ -1,0 +1,118 @@
+.sec-promo-banner
+	margin-top: calc((var(--clr-section-gap) * -1) + 50px)
+	+sm
+		margin-top: calc((var(--clr-section-gap) * -1) + 30px)
+.banner
+	display: flex
+	padding: 46px 52px
+	gap: 80px
+	font-family: var(--ff2)
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	border-radius: 30px
+	position: relative
+	z-index: 1
+	min-height: 300px
+	+lg
+		gap: 60px
+	+md
+
+		padding: 40px
+	+sm
+		flex-direction: column
+		padding: 20px
+		border-radius: 20px
+		gap: 40px
+	&__link
+		+coverdiv
+		text-decoration: none
+	&__head
+		width: 360px
+		flex: none
+		display: flex
+		flex-direction: column
+		gap: 30px
+		+lg
+			width: 280px
+		+md
+			width: 230px
+		+sm
+			width: 100%
+			flex-direction: row
+			align-items: center
+			gap: 20px
+	&__logo
+		flex: none
+		+sm
+			width: 46%
+
+	&__content
+		flex: 1
+		min-width: 1px
+
+	&__title
+		color: #83F35D
+		text-transform: uppercase
+		font-size: 48px
+		line-height: 1
+		+lg
+			font-size: 38px
+		+md
+			font-size: 32px
+		+xxs
+			font-size: 20px
+	&__date
+		color: #83F35D
+		text-transform: uppercase
+		margin-top: auto
+		font-size: 23px
+		text-wrap: balance
+		+lg
+			font-size: 16px
+		+md
+			font-size: 14px
+		+sm
+			margin-top: 0
+			margin-left: auto
+			text-align: right
+		+xxs
+			font-size: 10px
+	&__text
+		font-size: 14px
+		margin-top: 30px
+
+		+sm
+			margin-top: 12px
+		+xxs
+			font-size: 10px
+	&__tags
+		margin-top: 75px
+		font-size: 0
+		+lg
+			margin-top: 50px
+		+md
+			margin-top: 40px
+		+sm
+			margin-top: 20px
+		span
+			margin-bottom: 2px
+			display: inline-block
+			line-height: 30px
+			border-radius: 30px
+			white-space: nowrap
+			color: #fff
+			border: 1px solid #fff
+			font-size: 14px
+			padding: 0 15px
+			text-transform: lowercase
+			+md
+				line-height: 24px
+				font-size: 12px
+				padding: 0 12px
+			+sm
+				line-height: 20px
+				padding: 0 10px
+			+xxs
+				font-size: 10px
+				padding: 0 4px

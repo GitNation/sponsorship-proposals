@@ -51,6 +51,7 @@ const queryPages = /* GraphQL */ `
 			tilesTitle2
 			tilesTitle3
 			packagesTitle
+			isOneStopShopShow
 			shopTitle
 			shopSubtitle
 			shopDescription

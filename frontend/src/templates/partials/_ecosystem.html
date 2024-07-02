@@ -1,5 +1,6 @@
 <section class="section sec-ecosystem" id="ecosystem">
 	<div class="container">
+
 		<div class="section__head">
 			<h3 class="section__suptitle">{{info.shopTitle}}</h3>
 			<h2 class="section__title">{{info.shopSubtitle}}</h2>
@@ -37,26 +38,5 @@
 			</div>
 		</div>
 
-		{% if not info.isBannerShow %}
-		<div class="banner" style="background-image: url('{{info.bannerBg.asset.url}}');">
-			<a href="{{info.bannerUrl}}" class="banner__link">&nbsp;</a>
-			<div class="banner__head">
-				<div class="banner__logo">
-					<img src="{{info.bannerLogo.asset.url}}" alt="" role="presentation">
-				</div>
-				<div class="banner__date">{{info.bannerDate}}</div>
-			</div>
-			<div class="banner__content">
-				<div class="banner__title">{{info.bannerTitle}}</div>
-				<div class="banner__text">{{info.bannerDescription}}</div>
-				<div class="banner__tags">
-					{% for tag in info.bannerTags %}
-					<span>{{tag}}</span>
-					{% endfor %}
-				</div>
-			</div>
-
-		</div>
-		{% endif %}
 	</div>
 </section>

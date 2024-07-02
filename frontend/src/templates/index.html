@@ -6,7 +6,12 @@
 	{% include "partials/_conference-sponsor.html" %}
 	{% include "partials/_numbers.html" %}
 	{% include "partials/_packages.html" %}
+	{% if not info.isEcosystemShow %}
 	{% include "partials/_ecosystem.html" %}
+	{% endif %}
+	{% if not info.isBannerShow %}
+	{% include "partials/_banner.html" %}
+	{% endif %}
 	{% include "partials/_demographics.html" %}
 	{% include "partials/_follow-us.html" %}
 	<div class="devider"></div>

@@ -1,8 +1,10 @@
 <section class="section sec-partners" id="partners">
 	<div class="container">
+		{% if info.sponsorsTitle %}
 		<div class="section__head">
 			<h3 class="section__suptitle">{{info.sponsorsTitle}}</h3>
 		</div>
+		{% endif %}
 
 		{% for item in sponsors %}
 		<div class="sponsors-block ">
