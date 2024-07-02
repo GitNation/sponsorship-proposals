@@ -448,6 +448,12 @@ export default {
     },
     // One stop shop
     {
+      title: 'Hide block',
+      name: 'isOneStopShopShow',
+      type: 'boolean',
+      fieldset: 'oneStopShop',
+    },
+    {
       title: 'Title',
       name: 'shopTitle',
       type: 'string',
