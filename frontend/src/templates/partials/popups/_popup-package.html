@@ -9,7 +9,7 @@
 				<div class="package-popup__left">
 					<button class="popup__close _close-modal" aria-label="close">
 						<svg class="icon icon-back">
-							<use xlink:href="img/sprite.svg?2#back"></use>
+							<use xlink:href="img/sprite.svg?3#back"></use>
 						</svg>
 						<span>Back</span>
 					</button>
@@ -41,7 +41,7 @@
 							{% for addon in item.addons %}
 							<div class="addon">
 								<div class="addon__picture">
-									<img class="addon__img" src="{{addon.image.asset.url}}">
+									<img class="addon__img" src="{{addon.image.asset.url}}?w=800&auto=format">
 									{% if addon.moreLink %}
 									<a class="addon__more" href="{{addon.moreLink}}" target="_blank">more photos</a>
 									{% endif %}
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<div class="package-popup__right">
-					<img class="package-popup__pic" src="{{item.rightImage.asset.url}}">
+					<img class="package-popup__pic" src="{{item.rightImage.asset.url}}?w=800&auto=format">
 
 					<ul class="checklist">
 						{% for check in item.checklist %}

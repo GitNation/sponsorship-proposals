@@ -10,7 +10,7 @@
 		<div class="sponsors-block ">
 			{% for sponsor in item.list %}
 			<a href="{{sponsor.link}}" target="_blank" class="sponsors-block__item">
-				<img src="{{sponsor.image.asset.url}}" alt="{{sponsor.name}}">
+				<img src="{{sponsor.image.asset.url}}?auto=format" alt="{{sponsor.name}}">
 			</a>
 			{% endfor %}
 		</div>
