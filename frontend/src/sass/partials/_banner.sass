@@ -6,7 +6,6 @@
 	display: flex
 	padding: 46px 52px
 	gap: 80px
-	font-family: var(--ff2)
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
@@ -24,6 +23,7 @@
 		padding: 20px
 		border-radius: 20px
 		gap: 40px
+
 	&__link
 		+coverdiv
 		text-decoration: none
@@ -52,7 +52,7 @@
 		min-width: 1px
 
 	&__title
-		color: #83F35D
+		color: var(--_color, #fff)
 		text-transform: uppercase
 		font-size: 48px
 		line-height: 1
@@ -63,7 +63,7 @@
 		+xxs
 			font-size: 20px
 	&__date
-		color: #83F35D
+		color: var(--_color, #fff)
 		text-transform: uppercase
 		margin-top: auto
 		font-size: 23px
@@ -116,3 +116,10 @@
 			+xxs
 				font-size: 10px
 				padding: 0 4px
+
+	&.c3
+		font-family: var(--c3)
+		--_color: #83f35d
+	&.pc
+		font-family: var(--pc)
+		--_color: #FAFF05

@@ -82,6 +82,7 @@ const queryPages = /* GraphQL */ `
 					url
 				}
 			}
+			bannerConf
 			partnersTitle
 			sponsorsTitle
 			partnersPromoTitle

@@ -1,6 +1,7 @@
 <section class="section sec-promo-banner" id="promo-banner">
 	<div class="container">
-		<div class="banner" style="background-image: url('{{info.bannerBg.asset.url}}');">
+
+		<div class="banner {{info.bannerConf}}" style="background-image: url('{{info.bannerBg.asset.url}}');">
 			<a href="{{info.bannerUrl}}" class="banner__link">&nbsp;</a>
 			<div class="banner__head">
 				<div class="banner__logo">
@@ -8,6 +9,7 @@
 				</div>
 				<div class="banner__date">{{info.bannerDate}}</div>
 			</div>
+
 			<div class="banner__content">
 				<h2 class="banner__title">{{info.bannerTitle}}</h2>
 				<div class="banner__text">{{info.bannerDescription}}</div>
