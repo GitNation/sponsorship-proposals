@@ -503,6 +503,18 @@ export default {
       fieldset: 'banner',
     },
     {
+      name: 'bannerConf',
+      title: 'Conferences',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'С3Fest', value: 'c3' },
+          { title: 'Productivity', value: 'pc' },
+        ],
+      },
+      fieldset: 'banner',
+    },
+    {
       title: 'Title',
       name: 'bannerTitle',
       type: 'string',
