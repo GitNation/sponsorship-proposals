@@ -21,6 +21,12 @@ gulp.task("copy:css", function () {
 	return gulp.src(config.src.css + "/**/*.*").pipe(gulp.dest(config.dest.css));
 });
 
+gulp.task("copy:video", function () {
+	return gulp
+		.src(config.src.video + "/**/*.*")
+		.pipe(gulp.dest(config.dest.video));
+});
+
 gulp.task("copy:rootfiles", function () {
 	return gulp.src(config.src.root + "/*.*").pipe(gulp.dest(config.dest.root));
 });
