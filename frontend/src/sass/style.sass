@@ -18,9 +18,9 @@ body
 
 	--clr-section-gap: 150px
 	+md
-		--clr-section-gap: 96px
+		--clr-section-gap: 120px
 	+sm
-		--clr-section-gap: 55px
+		--clr-section-gap: 80px
 		font-size: 14px
 .container
 	--_container: 40px
@@ -48,6 +48,7 @@ body
 @import partials/common
 @import partials/sections
 @import partials/hero
+@import partials/header
 @import partials/conference-sponsor
 @import partials/numbers
 @import partials/packages
@@ -62,3 +63,19 @@ body
 @import partials/popups
 
 @import "partials/footer"
+
+@media (min-width: $md + 1)
+	.visible-md
+		display: none !important
+
+@media (max-width: $md )
+	.hidden-md
+		display: none !important
+
+@media (min-width: $sm + 1)
+	.visible-sm
+		display: none !important
+
+@media (max-width: $sm )
+	.hidden-sm
+		display: none !important

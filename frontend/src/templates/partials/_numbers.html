@@ -1,11 +1,12 @@
 <section class="section sec-numbers" id="numbers">
 	<div class="container">
-		<div class="section__head">
-			{% if info.tilesHeadTitle %}
-			<h3 class="section__suptitle">{{info.tilesHeadTitle}}</h3>
-			{% endif %}
-			<h2 class="section__title">{{info.tilesTitle}}</h2>
+		<div class="number-head " style="background-image: url('img/numbers-head-bg-2.webp');">
+			<div class="section__head shine">
+				<h3 class="section__suptitle">The conference in numbers</h3>
+				<h2 class="section__title">{{info.tilesTitle}}</h2>
+			</div>
 		</div>
+
 
 		<div class="numbers">
 			{% for num in tileStats %}
@@ -28,8 +29,11 @@
 		</div>
 
 		{% if info.tilesTitle2 %}
-		<div class="section__head">
-			<h2 class="section__title">{{info.tilesTitle2}}</h2>
+		<div class="number-head " style="background-image: url('img/numbers-head-bg-1.webp');">
+			<div class="section__head shine">
+				<h3 class="section__suptitle">The conference in numbers</h3>
+				<h2 class="section__title">{{info.tilesTitle2}}</h2>
+			</div>
 		</div>
 		{% endif %}
 
@@ -56,8 +60,11 @@
 		{% endif %}
 
 		{% if info.tilesTitle3 %}
-		<div class="section__head">
-			<h2 class="section__title">{{info.tilesTitle3}}</h2>
+		<div class="number-head " style="background-image: url('img/numbers-head-bg-3.webp');">
+			<div class="section__head shine">
+				<h3 class="section__suptitle">The conference in numbers</h3>
+				<h2 class="section__title">{{info.tilesTitle3}}</h2>
+			</div>
 		</div>
 		{% endif %}
 

@@ -1,7 +1,7 @@
 <section class="section sec-reviews" id="reviews">
 	<div class="container">
 		<div class="section__head">
-			<h3 class="section__suptitle">{{info.partnersTitle}}</h3>
+			<h2 class="section__title">{{info.partnersTitle}}</h2>
 		</div>
 
 		<div class="reviews">
@@ -10,7 +10,7 @@
 					{% for recommended in partners %}
 					<div class="swiper-slide review">
 
-						<div class="review__text">
+						<div class="review__text" title="{{recommended.text}}">
 							{{recommended.text}}
 						</div>
 						<div class="review__footer">
@@ -23,13 +23,18 @@
 									<div class="r-author__company">{{recommended.job}}</div>
 								</div>
 							</div>
+							{% if recommended.logo.asset.url %}
+							<div class="review__logo">
+								<img src="{{recommended.logo.asset.url}}" alt="" role="presentation">
+							</div>
+							{% endif %}
 						</div>
 					</div>
 					{% endfor %}
 				</div>
 			</div>
 
-			<div class="reviews-swiper-navigation">
+			<div class="reviews-swiper-pagination swiper-pagination">
 				<button class="reviews-swiper__prev">
 					<svg class="icon icon-chevron-left">
 						<use xlink:href="img/sprite.svg#chevron-left"></use>

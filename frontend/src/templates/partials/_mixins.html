@@ -1,36 +1,41 @@
 {% macro icon(i) %}
-	<svg class="icon icon-{{i}}" role="img" aria-hidden="true">
-		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#icon-{{i}}"></use>
-	</svg>
+<svg class="icon icon-{{i}}" role="img" aria-hidden="true">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg?ver2#{{i}}"></use>
+</svg>
 {% endmacro %}
 
 {% macro slider(conf) %}
-	<div class="loc-slider">
+<div class="loc-slider">
+	{% for item in conf.source %}
+	<div class="loc-slider__item">
+		<img src="pic/{{item.img}}">
+	</div>
+	{% endfor %}
+</div>
+
+<div class="loc-slider-nav">
+	<div class="pagination"></div>
+	<div class="captions">
 		{% for item in conf.source %}
-		<div class="loc-slider__item">
-			<img src="pic/{{item.img}}">
-		</div>
+		<div class="caption">{{item.caption}}</div>
 		{% endfor %}
 	</div>
-
-	<div class="loc-slider-nav">
-		<div class="pagination"></div>
-		<div class="captions">
-			{% for item in conf.source %}
-			<div class="caption">{{item.caption}}</div>
-			{% endfor %}
-		</div>
-	</div>
+</div>
 {% endmacro %}
 
 {% macro featureIcon(svg) %}
-  <div class="feature__img-wrap">
-    <div class="feature__img-background">
-      <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="23.496" y1="6.29" x2="70.504" y2="87.71"><stop offset=".25" stop-color=var(--clr-theme)/><stop offset="1" stop-color=var(--clr-themeD)/></linearGradient><circle cx="47" cy="47" r="47" fill="url(#a)"/></svg>
-    </div>
-    <div class="feature__img-container">
-      {{ svg | safe }}
-    </div>
-  </div>
+<div class="feature__img-wrap">
+	<div class="feature__img-background">
+		<svg xmlns="http://www.w3.org/2000/svg" width="94" height="94">
+			<linearGradient id="a" gradientUnits="userSpaceOnUse" x1="23.496" y1="6.29" x2="70.504" y2="87.71">
+				<stop offset=".25" stop-color=var(--clr-theme) />
+				<stop offset="1" stop-color=var(--clr-themeD) />
+			</linearGradient>
+			<circle cx="47" cy="47" r="47" fill="url(#a)" />
+		</svg>
+	</div>
+	<div class="feature__img-container">
+		{{ svg | safe }}
+	</div>
+</div>
 {% endmacro %}
-

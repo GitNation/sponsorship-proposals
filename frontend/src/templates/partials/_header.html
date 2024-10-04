@@ -1,30 +1,60 @@
-	<button class="menu-toggle">
-		<span></span>
-		<span></span>
-		<span></span>
-	</button>
-
-	<header class="header">
-		<div class="container">
-			<div class="header__nav">
-				<nav class="nav">
-					{% if inner %}
-					<li class="nav__item"><a class="nav__link" href="/">Menu on inner page</a></li>
-					{% else %}
-					<li class="nav__item"><a class="nav__link js-scroll-to" href="#motivation">Motivation</a></li>
-					<li class="nav__item"><a class="nav__link js-scroll-to" href="#stats">Stats</a></li>
-					<li class="nav__item"><a class="nav__link js-scroll-to" href="#packages">Packages and addons</a></li>
-					<li class="nav__item"><a class="nav__link js-scroll-to" href="#partners">Partners</a></li>
-					<li class="nav__item"><a class="nav__link js-scroll-to" href="#footer">Follow us</a></li>
-					<li class="nav__item"><a class="nav__link js-scroll-to" href="{{ main.mainUrl }}">Event page</a></li>
-					{% endif %}
-				</nav>
-
-        {% if info.contactUrl %}
-				<a class="header__btn" href="mailto:{{ info.contactUrl }}">Contact Us</a>
-        {% else %}
-        <a class="header__btn" href="mailto:{{ info.email }}">Contact Us</a>
-        {% endif %}
+<header class="header">
+	<div class="container">
+		<div class="header__nav">
+			<div class="social social--default hidden-sm">
+				{% if info.mediumUrl %}<a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('medium')}}</a>{% endif %}
+				{% if info.twitterUrl %}<a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('twitter')}}</a>{% endif %}
+				{% if info.facebookUrl %}<a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a>{% endif %}
+				{% if info.youtubeUrl %}<a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('youtube')}}</a>{% endif %}
+				{% if info.slackUrl %}<a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a>{% endif %}
+				{% if info.portal %}<a href="{{ info.portal }}" class="social__link" target="_blank">{{mixins.icon('gitnation')}}</a>{% endif %}
 			</div>
+			<nav class="nav">
+				<ul class="nav__list hidden-md">
+					<li class="nav__list-item"><a class="nav__list-link js-scroll-to" href="#demographics">Attendees</a></li>
+					<li class="nav__list-item"><a class="nav__list-link js-scroll-to" href="#packages">Packages</a></li>
+					<li class="nav__list-item"><a class="nav__list-link js-scroll-to" href="#reviews">Testimonials</a></li>
+					<li class="nav__list-item"><a class="nav__list-link js-scroll-to" href="#ecosystem">Combo Deal</a></li>
+				</ul>
+
+				<button class="menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="nav__dropdown">
+					<ul class="nav__dropdown-list">
+						<li class="visible-md"><a class="js-scroll-to" href="#demographics">Attendees</a></li>
+						<li class="visible-md"><a class="js-scroll-to" href="#packages">Packages</a></li>
+						<li class="visible-md"><a class="js-scroll-to" href="#reviews">Testimonials</a></li>
+						<li class="visible-md"><a class="js-scroll-to" href="#ecosystem">Combo Deal</a></li>
+						<li>
+							<a href="#get-sponsors" class="js-scroll-to">What You Get as a Sponsor</a>
+						</li>
+						<li>
+							<a href="#numbers" class="js-scroll-to">Event Edition Reach</a>
+						</li>
+						<li>
+							<a href="#follow-us" class="js-scroll-to">Newsletter</a>
+						</li>
+						<li>
+							<a href="#features" class="js-scroll-to">Photo Gallery</a>
+						</li>
+					</ul>
+
+					<div class="social social--default visible-sm">
+						{% if info.mediumUrl %}<a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('medium')}}</a>{% endif %}
+						{% if info.twitterUrl %}<a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('twitter')}}</a>{% endif %}
+						{% if info.facebookUrl %}<a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a>{% endif %}
+						{% if info.youtubeUrl %}<a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('youtube')}}</a>{% endif %}
+						{% if info.slackUrl %}<a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a>{% endif %}
+						{% if info.portal %}<a href="{{ info.portal }}" class="social__link" target="_blank">{{mixins.icon('gitnation')}}</a>{% endif %}
+					</div>
+				</div>
+			</nav>
+
+
+			<a class="header__btn" href="mailto:{{ info.email }}">Contact Us</a>
 		</div>
-	</header><!-- .header -->
+	</div>
+</header>

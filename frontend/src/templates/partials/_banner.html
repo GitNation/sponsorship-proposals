@@ -12,7 +12,7 @@
 
 			<div class="banner__content">
 				<h2 class="banner__title">{{info.bannerTitle}}</h2>
-				<div class="banner__text">{{info.bannerDescription}}</div>
+				{% if info.bannerDescription %}<div class="banner__text">{{info.bannerDescription}}</div>{% endif %}
 				<div class="banner__tags">
 					{% for tag in info.bannerTags %}
 					<span>{{tag}}</span>

@@ -1,10 +1,13 @@
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
+{% include "partials/_header.html" %}
 <main class="content">
+
 	{% include "partials/_hero.html" %}
 	{% include "partials/_conference-sponsor.html" %}
 	{% include "partials/_numbers.html" %}
+	{% include "partials/_reviews.html" %}
 	{% include "partials/_packages.html" %}
 	{% if not info.isOneStopShopShow %}
 	{% include "partials/_ecosystem.html" %}
@@ -14,8 +17,8 @@
 	{% endif %}
 	{% include "partials/_demographics.html" %}
 	{% include "partials/_follow-us.html" %}
-	<div class="devider"></div>
-	{% include "partials/_reviews.html" %}
+	<!-- <div class="devider"></div> -->
+
 	{% include "partials/_features.html" %}
 	{% include "partials/_partners.html" %}
 	{% if not info.isAboutShow %}

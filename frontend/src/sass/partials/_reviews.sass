@@ -1,25 +1,49 @@
 
+.sec-reviews
+	margin: calc(var(--clr-section-gap) + 30px) 0
+	+sm
+		margin: calc(var(--clr-section-gap) + 10px) 0
+	+xs
+		margin: var(--clr-section-gap) 0
+	.section__title
+		color: var(--clr-theme)
+		text-align: center
+		margin-left: auto
+		margin-right: auto
 .reviews
 	position: relative
+	mask: linear-gradient(90deg, transparent, var(--clr-black) 30%, var(--clr-black) 70%, transparent)
+	margin-left: -140px
+	margin-right: -140px
+	padding: 0 140px
+	+md
+		margin-left: calc(var(--_container) * -1)
+		margin-right: calc(var(--_container) * -1)
+		padding: 0 var(--_container)
+		mask: linear-gradient(90deg, transparent, var(--clr-black) 15%, var(--clr-black) 85%, transparent)
+	+xs
+		mask: none
 .reviews-swiper
+	overflow: visible
 	margin-top: 50px
+	padding: 1px
 	+md
 		margin-top: 30px
 	+sm
 		margin-top: 20px
-	&-navigation
-		position: absolute
-		bottom: 0
-		right: 0
-		z-index: 2
+	.swiper-slide
+		height: auto
+	&-pagination
+		position: static
+		margin-top: 40px
+		gap: 8px
 		display: flex
-		gap: 1px
-		+sm
-			position: relative
-			bottom: auto
-			right: auto
-			justify-content: center
-			margin-top: 25px
+		justify-content: center
+		.swiper-pagination-bullet
+			background: #313131
+			opacity: 1
+			&-active
+				background: var(--clr-theme)
 	&__next, &__prev
 		width: 60px
 		height: 60px
@@ -46,16 +70,29 @@
 			.icon
 				color: var(--clr-black)
 .review
+	padding: 48px
+	border-radius: 30px
+	outline: 1px solid #313131
+	display: flex
+	flex-direction: column
+	gap: 30px
+	+md
+		border-radius: 20px
+		padding: 30px
+	+sm
+		padding: 20px
 	&__text
-		font-size: 28px
+		font-size: 24px
 		line-height: 1.25
-		font-weight: 300
-		max-width: 870px
+		+ellipsis(5)
 		+md
-			line-height: 1.2
+			font-size: 20px
 		+sm
-			font-size: 18px
+			font-size: 16px
 			line-height: 1.4
+		+xs
+			font-size: 14px
+
 		&:before
 			content: ''
 			display: inline-block
@@ -66,23 +103,38 @@
 			background: #fff
 			+sm
 				width: 40px
-	&__author
-		margin-top: 30px
-		margin-right: 200px
-		+md
-			margin-top: 25px
+	&__footer
+		margin-top: auto
+		display: flex
+		align-items: flex-end
+		gap: 30px
 		+sm
-			margin-top: 15px
-			margin-right: 0
+			gap: 20px
+	&__logo
+		max-width: 180px
+		flex: none
+		margin-left: auto
+		+xs
+			display: none
+		img
+			display: block
+			width: auto
+			max-width: 100%
+			max-height: 60px
 
 .r-author
 	display: flex
 	align-items: center
 	gap: 25px
+	+sm
+		gap: 15px
 	&__img
 		flex: none
 		width: 60px
 		height: 60px
+		+sm
+			width: 40px
+			height: 40px
 		img
 			width: 100%
 			height: 100%
@@ -92,6 +144,11 @@
 	&__name
 		text-transform: uppercase
 		font-size: 16px
+		+sm
+			font-size: 14px
 	&__company
 		font-size: 14px
 		color: var(--clr-gray-100)
+		line-height: 1.2
+		+sm
+			font-size: 12px

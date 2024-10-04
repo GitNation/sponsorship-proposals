@@ -6,10 +6,10 @@
 			<div class="footer__socials">
 				<div class="social">
 
+					{% if info.twitterUrl %}<a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('twitter')}}</a>{% endif %}
 					{% if info.facebookUrl %}<a href="{{ info.facebookUrl }}" class="social__link" target="_blank">{{mixins.icon('fb')}}</a>{% endif %}
-					{% if info.twitterUrl %}<a href="{{ info.twitterUrl }}" class="social__link" target="_blank">{{mixins.icon('tw')}}</a>{% endif %}
-					{% if info.youtubeUrl %}<a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('yt')}}</a>{% endif %}
-					{% if info.mediumUrl %}<a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('med')}}</a>{% endif %}
+					{% if info.youtubeUrl %}<a href="{{ info.youtubeUrl }}" class="social__link" target="_blank">{{mixins.icon('youtube')}}</a>{% endif %}
+					{% if info.mediumUrl %}<a href="{{ info.mediumUrl }}" class="social__link" target="_blank">{{mixins.icon('medium')}}</a>{% endif %}
 					{% if info.slackUrl %}<a href="{{ info.slackUrl }}" class="social__link" target="_blank">{{mixins.icon('sl')}}</a>{% endif %}
 					{% if info.portal %}<a href="{{ info.portal }}" class="social__link" target="_blank">{{mixins.icon('gitnation')}}</a>{% endif %}
 				</div>

@@ -1,10 +1,46 @@
+
+.number-head
+	max-height: 480px
+	min-height: 200px
+	aspect-ratio: 2/.82333
+	width: 100%
+	padding: 50px
+	display: flex
+	align-items: center
+
+	text-align: center
+	border-radius: 30px
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	overflow: hidden
+	+md
+		border-radius: 20px
+	+sm
+		padding: 40px 15px
+	.section__head
+		width: 100%
+		z-index: 1
+		&.shine
+			&:before
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				filter: blur(150px)
+
+	.section__title
+		max-width: 100%
+		+sm
+			font-size: clamp(28px, 8vw, 62px)
+	.section__suptitle
+		+sm
+			font-size: 14px
+
 .numbers
 	display: grid
 	grid-template-columns: repeat(4,25%)
-	margin-top: 30px
 
 	+sm
-
 		grid-template-columns: repeat(2, 50%)
 	&__item
 		border: 1px solid var(--clr-black-300)
@@ -163,11 +199,9 @@
 			+md
 				max-width: 16px
 				max-height: 16px
-	& + .section__head
+	& + .number-head
 		margin-top: 113px
 		+md
 			margin-top: 65px
 		+sm
 			margin-top: 50px
-		.section__title
-			max-width: none

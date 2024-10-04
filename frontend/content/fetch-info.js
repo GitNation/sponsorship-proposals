@@ -6,6 +6,7 @@ const queryPages = /* GraphQL */ `
 			name
 			pageTitle
 			pageDescription
+			brandSelect
 			sponsorsUrl
 			twitterUrl
 			facebookUrl
@@ -18,7 +19,6 @@ const queryPages = /* GraphQL */ `
 			email
 			contactUrl
 			introTitle
-			introSubtitle
 			introSponsorship
 			introDate
 			introLocation

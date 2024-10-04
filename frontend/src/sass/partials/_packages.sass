@@ -15,7 +15,7 @@
 			padding: 40px
 		+md
 			padding: 30px
-			min-height: 202px
+			min-height: 252px
 			border-radius: 20px
 			align-items: stretch
 		+sm
@@ -50,10 +50,12 @@
 				.packages__arrow
 					background: #494949
 			&--gold
+
 				&:hover, &:focus-visible
 					outline-color: #955B17
 				&:after
 					box-shadow: 0px 0px 70px 0px #955B17
+
 				.packages__arrow
 					background: #D6A426
 			&--platinum
@@ -63,6 +65,19 @@
 					box-shadow: 0px 0px 70px 0px #fff
 				.packages__arrow
 					background: #FFFFFF
+
+		&--silver
+			.packages__title, .packages__price
+				color: #B9B9B9
+
+		&--gold
+			.packages__title, .packages__price
+				color: #FFB900
+
+		&--platinum
+			.packages__title, .packages__price
+				color: #ffffff
+
 	&__link
 		+coverdiv
 		display: block
@@ -88,15 +103,17 @@
 		text-transform: uppercase
 		line-height: .9
 		font-weight: 500
+		color: var(--clr-theme)
 
 		+lg
 			font-size: 62px
 		+sm
-			font-size: clamp(32px, 10vw,62px)
-			line-height: 0.8
+			font-size: clamp(32px, 10vw,40px)
+
 	&__price
 		font-size: 28px
 		margin-top: 10px
+		color: var(--clr-theme)
 		+lg
 			font-size: 24px
 		+sm
@@ -106,7 +123,7 @@
 		margin-top: 15px
 		+md
 			margin-top: auto
-			padding-top: 10px
+			padding-top: 30px
 
 	&__arrow
 		position: absolute
