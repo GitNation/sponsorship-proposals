@@ -305,19 +305,7 @@ export default {
       type: 'string',
       fieldset: 'motivation',
     },
-    {
-      title: 'Description',
-      name: 'motivationDescription',
-      type: 'text',
-      fieldset: 'motivation',
-    },
-    {
-      title: 'List',
-      name: 'motivationList',
-      type: 'array',
-      fieldset: 'motivation',
-      of: [{ type: 'string' }],
-    },
+
     {
       title: 'Key Features',
       description: 'If key features are set, the features section is moved under stats block',
@@ -663,12 +651,6 @@ export default {
       title: 'Sub Title',
       name: 'aboutSubTitle',
       type: 'string',
-      fieldset: 'about',
-    },
-    {
-      title: 'Description',
-      name: 'aboutDescription',
-      type: 'text',
       fieldset: 'about',
     },
     {

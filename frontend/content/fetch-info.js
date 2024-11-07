@@ -44,8 +44,6 @@ const queryPages = /* GraphQL */ `
 			}
 			motivationTitle
 			motivationSubTitle
-			motivationDescription
-			motivationList
 			tilesHeadTitle
 			tilesTitle
 			tilesTitle2
@@ -90,7 +88,6 @@ const queryPages = /* GraphQL */ `
 			isAboutShow
 			aboutTitle
 			aboutSubTitle
-			aboutDescription
 			aboutTextRight
 			aboutDescription2
 			aboutTextRight2

@@ -4,20 +4,6 @@
 			<h3 class="section__suptitle">{{info.motivationTitle}}</h3>
 			<h2 class="section__title">{{info.motivationSubTitle}}</h2>
 		</div>
-		<div class="conference-sponsor__content">
-			<div class="conference-sponsor__content-left section__description">
-				{{info.motivationDescription}}
-			</div>
-			{% if info.motivationList.length > 0 %}
-			<div class="conference-sponsor__content-right styled-text">
-				<ul>
-					{% for item in info.motivationList %}
-					<li>{{item}}</li>
-					{% endfor %}
-				</ul>
-			</div>
-			{% endif %}
-		</div>
 
 		<div class="cs-list spoller" data-spollers data-one-spoller>
 			{% for spoller in features %}
