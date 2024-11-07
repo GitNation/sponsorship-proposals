@@ -16,7 +16,9 @@
 						<div class="review__footer">
 							<div class="review__author r-author">
 								<div class="r-author__img">
-									<img src="{{recommended.image.asset.url}}" alt="{{recommended.name}}">
+									<img src="{{recommended.image.asset.url}}?w=60&auto=format"
+											 srcSet="{{recommended.image.asset.url}}?w=60&auto=format 1x, {{recommended.image.asset.url}}?w=120&auto=format 2x, {{recommended.image.asset.url}}?w=180&auto=format 3x"
+											 alt="{{recommended.name}}">
 								</div>
 								<div class="r-author__content">
 									<div class="r-author__name">{{recommended.name}}</div>
@@ -25,7 +27,9 @@
 							</div>
 							{% if recommended.logo.asset.url %}
 							<div class="review__logo">
-								<img src="{{recommended.logo.asset.url}}" alt="" role="presentation">
+								<img src="{{recommended.logo.asset.url}}?w=60&auto=format"
+										 srcSet="{{recommended.logo.asset.url}}?w=60&auto=format 1x, {{recommended.logo.asset.url}}?w=120&auto=format 2x, {{recommended.logo.asset.url}}?w=180&auto=format 3x"
+										 alt="" role="presentation">
 							</div>
 							{% endif %}
 						</div>
