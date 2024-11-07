@@ -4,7 +4,7 @@
 			<div class="swiper-wrapper">
 				{% for item in packageSlides %}
 				<div class="swiper-slide feature"
-						 style="background-image: image-set(url('{{item.image.asset.url}}?h=640&auto=format'); background-image: image-set(url('{{item.image.asset.url}}?h=640&auto=format') 1x, url('{{item.image.asset.url}}?h=1280&auto=format') 2x, url('{{item.image.asset.url}}?h=1920&auto=format') 3x);">
+						 style="background-image: url('{{item.image.asset.url}}?h=640&auto=format'); background-image: image-set(url('{{item.image.asset.url}}?h=640&auto=format') 1x, url('{{item.image.asset.url}}?h=1280&auto=format') 2x, url('{{item.image.asset.url}}?h=1920&auto=format') 3x);">
 					<div class="feature__text">{{item.caption}}</div>
 				</div>
 				{% endfor %}
