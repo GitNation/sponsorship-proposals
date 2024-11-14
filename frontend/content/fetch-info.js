@@ -88,9 +88,8 @@ const queryPages = /* GraphQL */ `
 			isAboutShow
 			aboutTitle
 			aboutSubTitle
-			aboutTextRight
-			aboutDescription2
-			aboutTextRight2
+			aboutTextFirst
+			aboutTextSecond
 		}
 	}
 `;
