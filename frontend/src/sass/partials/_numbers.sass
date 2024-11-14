@@ -1,40 +1,13 @@
 
-.number-head
-	max-height: 480px
-	min-height: 200px
-	aspect-ratio: 2/.82333
-	width: 100%
-	padding: 50px
-	display: flex
-	align-items: center
-
-	text-align: center
-	border-radius: 30px
-	background-repeat: no-repeat
-	background-position: center
-	background-size: cover
-	overflow: hidden
+.sec-numbers
+	padding: 60px 0
 	+md
-		border-radius: 20px
+		padding: 30px 0
 	+sm
-		padding: 40px 15px
+		padding: 20px 0
 	.section__head
 		width: 100%
 		z-index: 1
-		&.shine
-			&:before
-				left: 50%
-				top: 50%
-				transform: translate(-50%, -50%)
-				filter: blur(150px)
-
-	.section__title
-		max-width: 100%
-		+sm
-			font-size: clamp(28px, 8vw, 62px)
-	.section__suptitle
-		+sm
-			font-size: 14px
 
 .numbers
 	display: grid
@@ -109,10 +82,12 @@
 				grid-column: 1/2
 				grid-row: 2/3
 				width: 100%
-		&--bg
-			background: var(--clr-black-300)
-			&[href]:hover
-				background: var(--clr-black-400)
+		&--active
+			border-color: var(--clr-theme)
+			z-index: 1
+			.numbers__val, .numbers__title
+				color: var(--clr-theme)
+
 	&__end
 		padding: 30px
 		display: flex
@@ -199,7 +174,7 @@
 			+md
 				max-width: 16px
 				max-height: 16px
-	& + .number-head
+	& + .section__head
 		margin-top: 113px
 		+md
 			margin-top: 65px

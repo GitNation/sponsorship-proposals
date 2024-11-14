@@ -34,8 +34,8 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'isBackgroundColor',
-      title: 'Background color',
+      name: 'isActive',
+      title: 'highlight block',
       type: 'boolean',
     },
     {
