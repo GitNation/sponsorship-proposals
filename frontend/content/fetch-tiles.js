@@ -14,7 +14,7 @@ const queryPages = /* GraphQL */ `
 				value
 				description
 				isLarge
-				isBackgroundColor
+				isActive
 				isImgCenter
 			}
 			tales2 {
@@ -28,7 +28,7 @@ const queryPages = /* GraphQL */ `
 				value
 				description
 				isLarge
-				isBackgroundColor
+				isActive
 				isImgCenter
 			}
 			tales3 {
@@ -42,7 +42,7 @@ const queryPages = /* GraphQL */ `
 				value
 				description
 				isLarge
-				isBackgroundColor
+				isActive
 				isImgCenter
 			}
 		}
@@ -63,7 +63,7 @@ const fetchData = async (client, vars) => {
 				name,
 				value,
 				description,
-				isBackgroundColor,
+				isActive,
 				isLarge,
 				isImgCenter,
 			},
@@ -75,7 +75,7 @@ const fetchData = async (client, vars) => {
 			description,
 			animDelay,
 			isLarge,
-			isBackgroundColor,
+			isActive,
 			isImgCenter,
 			img: getUrl(image),
 			animation: !(ind % 2) ? "fade-up" : "fade-down",
@@ -91,7 +91,7 @@ const fetchData = async (client, vars) => {
 					name,
 					value,
 					description,
-					isBackgroundColor,
+					isActive,
 					isLarge,
 					isImgCenter,
 				},
@@ -103,7 +103,7 @@ const fetchData = async (client, vars) => {
 				description,
 				animDelay,
 				isLarge,
-				isBackgroundColor,
+				isActive,
 				isImgCenter,
 				img: getUrl(image),
 				animation: !(ind % 2) ? "fade-up" : "fade-down",
@@ -119,7 +119,7 @@ const fetchData = async (client, vars) => {
 					name,
 					value,
 					description,
-					isBackgroundColor,
+					isActive,
 					isLarge,
 					isImgCenter,
 				},
@@ -131,7 +131,7 @@ const fetchData = async (client, vars) => {
 				description,
 				animDelay,
 				isLarge,
-				isBackgroundColor,
+				isActive,
 				isImgCenter,
 				img: getUrl(image),
 				animation: !(ind % 2) ? "fade-up" : "fade-down",

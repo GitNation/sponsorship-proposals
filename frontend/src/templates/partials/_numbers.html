@@ -1,19 +1,18 @@
 <section class="section sec-numbers" id="numbers">
 	<div class="container">
-		<div class="number-head "
-			style="background-image: url('img/numbers-head-bg-2.webp'); background-image: image-set(url('img/numbers-head-bg-2.webp') 1x, url('img/numbers-head-bg-2@2x.webp') 2x, url('img/numbers-head-bg-2@3x.webp') 3x)">
-			<div class="section__head shine">
-				<h3 class="section__suptitle">The conference in numbers</h3>
-				<h2 class="section__title">{{info.tilesTitle}}</h2>
-			</div>
+
+		<div class="section__head shine">
+			<h3 class="section__suptitle">The conference in numbers</h3>
+			<h2 class="section__title">{{info.tilesTitle}}</h2>
 		</div>
+
 
 
 		<div class="numbers">
 			{% for num in tileStats %}
 
 			<div
-				class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--bg' if num.isBackgroundColor}} {{'numbers__item--lg' if num.isLarge}}"
+				class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--active' if num.isActive}} {{'numbers__item--lg' if num.isLarge}} "
 				style="--numbers-order: {{loop.index}}">
 				<div class="numbers__head">
 					<div class="numbers__title">{{num.name}}</div>
@@ -26,7 +25,7 @@
 				{% endif %}
 				{% if num.img %}
 				<div class="numbers__img">
-					<img src="{{num.img}}" alt="{{num.name}}" role="presentation">
+					<img src="{{num.img}}" alt="{{num.name}}" role="presentation" />
 				</div>
 				{% endif %}
 			</div>
@@ -34,13 +33,11 @@
 		</div>
 
 		{% if info.tilesTitle2 %}
-		<div class="number-head "
-			style="background-image: url('img/numbers-head-bg-1.webp'); background-image: image-set(url('img/numbers-head-bg-1.webp') 1x, url('img/numbers-head-bg-1@2x.webp') 2x, url('img/numbers-head-bg-1@3x.webp') 3x)">
-			<div class="section__head shine">
-				<h3 class="section__suptitle">The conference in numbers</h3>
-				<h2 class="section__title">{{info.tilesTitle2}}</h2>
-			</div>
+
+		<div class="section__head ">
+			<h2 class="section__title">{{info.tilesTitle2}}</h2>
 		</div>
+
 		{% endif %}
 
 		{% if tileStats2 | length %}
@@ -48,7 +45,7 @@
 			{% for num in tileStats2 %}
 
 			<div
-				class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--bg' if num.isBackgroundColor}} {{'numbers__item--lg' if num.isLarge}}"
+				class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--active' if num.isActive}} {{'numbers__item--lg' if num.isLarge}}"
 				style="--numbers-order: {{loop.index}}">
 				<div class="numbers__head">
 					<div class="numbers__title">{{num.name}}</div>
@@ -70,13 +67,11 @@
 		{% endif %}
 
 		{% if info.tilesTitle3 %}
-		<div class="number-head "
-			style="background-image: url('img/numbers-head-bg-3.webp'); background-image: image-set(url('img/numbers-head-bg-3.webp') 1x, url('img/numbers-head-bg-3@2x.webp') 2x, url('img/numbers-head-bg-3@3x.webp') 3x)">
-			<div class="section__head shine">
-				<h3 class="section__suptitle">The conference in numbers</h3>
-				<h2 class="section__title">{{info.tilesTitle3}}</h2>
-			</div>
+
+		<div class="section__head ">
+			<h2 class="section__title">{{info.tilesTitle3}}</h2>
 		</div>
+
 		{% endif %}
 
 		{% if tileStats3 | length %}
@@ -84,7 +79,7 @@
 			{% for num in tileStats3 %}
 
 			<div
-				class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--bg' if num.isBackgroundColor}} {{'numbers__item--lg' if num.isLarge}}"
+				class="numbers__item {{'numbers__item--img-center' if num.isImgCenter}} {{'numbers__item--active' if num.isActive}} {{'numbers__item--lg' if num.isLarge}}"
 				style="--numbers-order: {{loop.index}}">
 				<div class="numbers__head">
 					<div class="numbers__title">{{num.name}}</div>
@@ -97,7 +92,7 @@
 				{% endif %}
 				{% if num.img %}
 				<div class="numbers__img">
-					<img src="{{num.img}}" alt="{{num.name}}" role="presentation">
+					<img src="{{num.img}}" alt="{{num.name}}" role="presentation" />
 				</div>
 				{% endif %}
 			</div>
