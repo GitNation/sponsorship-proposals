@@ -12,16 +12,16 @@
 					<div class="cs-list__icon">
 						{{spoller.svg | safe}}
 					</div>
-					<div class="cs-list__title">{{spoller.title}}</div>
-					{% if spoller.supTitle %}
-					<div class="cs-list__description">{{spoller.supTitle}}</div>
-					{% endif %}
+					<div class="cs-list__content">
+						<div class="cs-list__title">{{spoller.title}}</div>
+						{% if spoller.supTitle %}
+						<div class="cs-list__description">{{spoller.supTitle}}</div>
+						{% endif %}
+					</div>
 					<div class="cs-list__caret"></div>
 				</div>
 				<div class="cs-list__body styled-text">
-					{% if spoller.supTitle %}
-					<div class="cs-list__description">{{spoller.supTitle}}</div>
-					{% endif %}
+
 					{% if spoller.description.length > 0 %}
 					<ul>
 						{% for li in spoller.description %}

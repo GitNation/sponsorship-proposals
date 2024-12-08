@@ -2,21 +2,38 @@
 	<div class="container">
 		<div class="hero__top">
 			<div class="hero__logo">
-				<a href="#" class="logo">
-					<img src="{{ info.logo.asset.url }}" alt="React Summit 2024">
+				<a href="/" class="logo">
+					<img src="{{ info.logo.asset.url }}" alt="React Summit 2024" />
 				</a>
 				<h1 class="hero__name">{{info.name}}</h1>
 			</div>
-			<div class="hero__date">{{ info.introDate }}</div>
-			<div class="hero__location">{{ info.introLocation }}</div>
+			<div class="hero__basement">
+				<a href="https://gitnation.org"><img src="img/basemant.svg" alt="Event by Gitnation" /></a>
+			</div>
+			<div class="hero__info">
+				<div class="hero__date">{{ info.introDate }}</div>
+				<div class="hero__location">{{ info.introLocation }}</div>
+			</div>
 		</div>
 
 		<div class="hero__middle">
+
+			<div class="hero__info">
+				<div class="hero__date">{{ info.introDate }}</div>
+				<div class="hero__location">{{ info.introLocation }}</div>
+			</div>
+
 			<h3 class="hero__sponsorship">
 				{{ info.introSponsorship }}
 			</h3>
 			<h2 class="hero__title">{{ info.introTitle }}</h2>
+
+			<div class="hero__basement ">
+				<a href="#"><img src="img/basemant.svg" alt="Event by Gitnation" /></a>
+			</div>
 		</div>
+
+
 	</div>
 	{% if info.brandSelect %}
 	<div class="hero__video">

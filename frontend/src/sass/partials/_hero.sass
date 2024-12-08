@@ -9,7 +9,7 @@
 	position: relative
 	z-index: 2
 	+sm
-		padding: 40px 0 80px
+		padding: 40px 0 150px
 
 	.container
 		width: 100%
@@ -17,9 +17,7 @@
 		flex-direction: column
 		gap: 60px
 		+md
-			gap: 50px
-		+sm
-			gap: 12vh
+			gap: 0
 
 	&__top
 		display: grid
@@ -28,25 +26,37 @@
 		align-items: flex-start
 		padding-top: 5px
 		+md
-			grid-template-columns: 1fr 1fr
+			grid-template-columns: 1fr
 			gap: 8vh 20px
 		+sm
-			grid-template-columns: 1fr
 			gap: 4px
 			padding-top: 0
+		.hero__basement
+			display: block
+			+md
+				display: none
+		.hero__info
+			+md
+				display: none
 
-	&__date
+	&__basement
 		grid-column: 1/2
 		grid-row: 1/2
+		display: none
+		+md
+			grid-row: auto
+			display: block
+			margin: 0 auto
+			max-width: max-content
+
+	&__date
 		font-size: 16px
 		font-weight: 500
 		line-height: 1
+		text-align: right
 		text-transform: uppercase
 		+md
-			grid-row: 2/3
 			text-align: center
-		+sm
-			grid-row: auto
 
 	&__logo
 		grid-column: 2/3
@@ -56,29 +66,32 @@
 		gap: 20px
 
 		+md
-			grid-column: 1/4
+			grid-column: auto
+			grid-row: auto
 			justify-content: center
 			gap: 15px
+			margin-bottom: 12vh
 		+sm
-			grid-row: auto
-			grid-column: 1/2
 			margin-bottom: 7vh
 
-	&__location
+	&__info
 		grid-column: 3/4
 		grid-row: 1/2
+
+		+md
+			grid-row: auto
+			grid-column: auto
+
+	&__location
+
 		text-align: right
 		font-size: 16px
 		font-weight: 500
 		line-height: 1
 		text-transform: uppercase
 		+md
-			grid-row: 2/3
-			grid-column: 2/3
 			text-align: center
-		+sm
-			grid-row: auto
-			grid-column: 1/2
+
 	&__name
 		text-transform: uppercase
 		font-size: 24px
@@ -91,14 +104,22 @@
 	&__middle
 		margin: auto 0
 		text-align: center
-		+sm
-			margin-top: 0
+		display: flex
+		flex-direction: column
+		gap: 20px
+		.hero__info
+			display: none
+			margin-bottom: 8vh
+			+md
+				display: block
+		.hero__basement
+			margin-top: 8vh
+
 	&__sponsorship
 		font-size: 24px
 		font-weight: 500
 		text-transform: uppercase
 		color: var(--clr-theme)
-		margin-bottom: 20px
 		+md
 			font-size: clamp(12px, 2.4vw, 20px)
 	&__title

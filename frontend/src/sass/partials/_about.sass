@@ -1,19 +1,27 @@
 .about
 	&__content
 		display: grid
-		// grid-template-columns: 1fr calc(50% + 20px)
-		// align-items: flex-start
+		grid-template-columns: 1fr 50%
+		align-items: flex-start
 		gap: 20px 40px
+		margin-top: 80px
 		+md
-			// grid-template-columns: 1fr
-			gap: 15px 0
-		&-left
-			font-size: 22px
-			line-height: 1.2
-			+sm
-				font-size: 16px
+			grid-template-columns: 1fr
+		+sm
+			margin-top: 50px
 
-		& + .about__content
+		&-title
+			font-size: clamp(26px, 5.5vw, 56px)
+			line-height: 1.1
+			color: var(--clr-theme)
+			font-weight: 500
+			text-transform: uppercase
+		&-text
+			width: 55%
 			margin-top: 65px
 			+md
 				margin-top: 50px
+
+	&__text
+		color: #fff
+		line-height: 1.8

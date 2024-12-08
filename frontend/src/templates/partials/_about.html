@@ -5,19 +5,19 @@
 			<h2 class="section__title">{{info.aboutSubTitle}}</h2>
 		</div>
 		{% if info.aboutTextFirst %}
-		<div class="about__content">
-			<div class="about__content-right styled-text styled-text--gray">
-				{{ info.aboutTextFirst | safe }}
-			</div>
+
+		<div class="about__text styled-text ">
+			{{ info.aboutTextFirst | safe }}
 		</div>
+
 		{% endif %}
 
 		{% if info.aboutTextSecond %}
 		<div class="about__content">
-			<div class="about__content-left">
+			<div class="about__content-title">
 				GitNation Exclusives:
 			</div>
-			<div class="about__content-right styled-text styled-text--gray">
+			<div class="about__text styled-text ">
 				{{ info.aboutTextSecond | safe }}
 			</div>
 		</div>
