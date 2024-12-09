@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       offcanvasLink.addEventListener('click', function(e) {
         e.preventDefault();
         let offcanvasName;
-        if (this.hasAttribute('href')) {
+        if (this.hasAttribute('href') && !this.getAttribute('data-href')) {
           offcanvasName = offcanvasLink.getAttribute('href').replace('#', '');
         } else {
           offcanvasName = offcanvasLink

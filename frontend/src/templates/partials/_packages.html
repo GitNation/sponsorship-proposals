@@ -7,7 +7,7 @@
 		<div class="packages">
 			{% for package in packages %}
 			<div class="packages__item packages__item--{{package.title | trim | lower}}">
-				<a href="#popup-{{package.packageId}}" class="packages__link _open-modal">&nbsp;</a>
+				<a href="#" class="packages__link _open-modal" data-href="#popup-{{package.packageId}}">&nbsp;</a>
 				<div class="packages__head">
 					<div class="packages__title">{{package.title | trim | replace('/', ' / ')}}</div>
 					<div class="packages__price">{{package.short | safe}}</div>
