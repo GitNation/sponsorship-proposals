@@ -25,7 +25,7 @@ const brandIDs = {
 	remixconfeu: "f366a626-58e4-4dcc-a093-723e93c30a69",
 	reactsummitus: "e8a68ded-a81a-4e99-872e-8c9035a5af29",
 	techleadconf: "b1e96afc-5757-434e-a1ff-fd76f663d945",
-	productivity: "f6cc8db3-f7ca-4d8d-bc3e-a06d5ed6b028",
+	aicodingsummit: "f6cc8db3-f7ca-4d8d-bc3e-a06d5ed6b028",
 	reactAdvancedCanada: "bebc8886-fe47-44b0-92ab-9b8c19e837c8",
 };
 
