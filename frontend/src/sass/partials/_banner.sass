@@ -13,12 +13,14 @@
 	position: relative
 	z-index: 1
 	min-height: 340px
+	color: var(--_color, #fff)
 	+lg
 		gap: 60px
 	+md
 		min-height: 250px
 		padding: 40px
 		gap: 40px
+
 	+sm
 		flex-direction: column
 		padding: 20px
@@ -36,16 +38,24 @@
 		+lg
 			width: 280px
 		+md
-			width: 230px
+			width: 34%
 		+sm
 			width: 100%
 			flex-direction: row
 			align-items: center
-			gap: 20px
+
 	&__logo
 		flex: none
 		+sm
-			width: 46%
+			width: 180px
+		img
+			max-width: 260px
+			+lg
+				max-width: 220px
+			+md
+				max-width: 200px
+			+sm
+				max-width: 100%
 
 	&__content
 		flex: 1
@@ -57,19 +67,19 @@
 			flex: none
 
 	&__title
-		color: var(--_color, #fff)
+
 		text-transform: uppercase
 		font-size: 40px
 		line-height: 1
 		+lg
-			font-size: 36px
+			font-size: 32px
 		+md
-			font-size: 28px
-		+xs
-			font-size: 24px
+			font-size: clamp(24px, 3.2vw, 32px)
+		+sm
+			font-size: clamp(20px, 3.8vw, 32px)
 
 	&__date
-		color: var(--_color, #fff)
+
 		text-transform: uppercase
 		margin-top: auto
 		font-size: 23px
@@ -82,8 +92,9 @@
 			margin-top: 0
 			margin-left: auto
 			text-align: right
-		+xxs
-			font-size: 10px
+		+xs
+			font-size: 12px
+
 	&__text
 		font-size: 14px
 		margin-top: 30px
@@ -136,3 +147,7 @@
 			span
 				background: #000
 				color: #fff
+		.banner__logo
+			margin-top: -10px
+			+sm
+				margin-top: -5px
