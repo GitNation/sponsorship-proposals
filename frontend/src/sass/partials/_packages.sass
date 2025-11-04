@@ -66,6 +66,14 @@
 				.packages__arrow
 					background: #FFFFFF
 
+			&--hackathon
+				&:hover, &:focus-visible
+					outline-color: #0a83c8
+				&:after
+					box-shadow: 0px 0px 70px 0px #0a83c8
+				.packages__arrow
+					background: #0a83c8
+
 		&--silver
 			.packages__title, .packages__price
 				color: #B9B9B9
@@ -77,6 +85,10 @@
 		&--platinum
 			.packages__title, .packages__price
 				color: #ffffff
+
+		&--hackathon
+			.packages__title, .packages__price
+				color: #0a90de
 
 	&__link
 		+coverdiv
