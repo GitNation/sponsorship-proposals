@@ -27,6 +27,7 @@ const brandIDs = {
 	techleadconf: "b1e96afc-5757-434e-a1ff-fd76f663d945",
 	aicodingsummit: "f6cc8db3-f7ca-4d8d-bc3e-a06d5ed6b028",
 	reactAdvancedCanada: "bebc8886-fe47-44b0-92ab-9b8c19e837c8",
+	webEngineeringSummit: "drafts.e5e7f905-8d31-442b-be19-87948584e061",
 };
 
 const credentials = {
