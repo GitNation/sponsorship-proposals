@@ -109,6 +109,7 @@ export default {
           { title: 'Typescript JS', value: 'tsc' },
           { title: 'Devops', value: 'doconf' },
           { title: 'Test JS Summit', value: 'qaconf' },
+          { title: 'Web Engineering Summit', value: 'wes' },
         ],
       },
       fieldset: 'main',
