@@ -1,8 +1,3 @@
----
-name: add-event
-description: Add a new event/brand to the sponsorship proposals project. Use when the user wants to add a new conference brand.
----
-
 Add a new event/brand to the sponsorship proposals project.
 
 ## Input from user
