@@ -28,6 +28,7 @@ const brandIDs = {
 	aicodingsummit: "f6cc8db3-f7ca-4d8d-bc3e-a06d5ed6b028",
 	reactAdvancedCanada: "bebc8886-fe47-44b0-92ab-9b8c19e837c8",
 	webEngineeringSummit: "e5e7f905-8d31-442b-be19-87948584e061",
+	techleadconfLondon: "86b1a743-a5b9-4029-9967-baad540ddf00",
 };
 
 const credentials = {
