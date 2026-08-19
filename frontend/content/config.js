@@ -24,6 +24,7 @@ const brandIDs = {
 	ReactDayBerlin: "4168329b-bbee-41d8-93fc-62ba0edbd7de",
 	remixconfeu: "f366a626-58e4-4dcc-a093-723e93c30a69",
 	reactsummitus: "e8a68ded-a81a-4e99-872e-8c9035a5af29",
+	reactsummitAsia: "197c163a-afec-4486-a240-1e30d2be25e5",
 	techleadconf: "b1e96afc-5757-434e-a1ff-fd76f663d945",
 	aicodingsummit: "f6cc8db3-f7ca-4d8d-bc3e-a06d5ed6b028",
 	aicodingsummitnyc: "e8db5e05-6c89-4dcd-baf5-604c8c9d6b49",
