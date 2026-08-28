@@ -67,7 +67,7 @@
     "lost": "^7.1.0",
     "netlify-cli": "^2.48.0",
     "postcss-csso": "^3.0.0",
-    "remark-html": "^10.0.0",
+    "remark-html": "^13.0.2",
     "remark-parse": "^7.0.1",
     "require-dir": "^1.0.0",
     "require-yaml": "^0.0.1",
