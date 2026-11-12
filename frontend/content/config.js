@@ -34,7 +34,7 @@ const brandIDs = {
 	aicodingsummitlondon: "d4c57b73-fc70-4acb-a838-51ad819f5e7d",
 	reactAdvancedCanada: "bebc8886-fe47-44b0-92ab-9b8c19e837c8",
 	webEngineeringSummit: "e5e7f905-8d31-442b-be19-87948584e061",
-	techleadconfLondon: "86b1a743-a5b9-4029-9967-baad540ddf00",
+	techleadconfLondon: "cd1d682f-49ed-4ca1-9af6-90b3c67c177b",
 };
 
 const credentials = {
