@@ -1,8 +1,20 @@
 Add a new event/brand to the sponsorship proposals project.
 
 ## Input from user
-- **BrandName**: $ARGUMENTS (e.g. `reactAdvancedCanada`)
+- **BrandName**: $ARGUMENTS (e.g. `aicodingsummitlondon`)
 - **SanityID**: Ask the user for the Sanity `_id` if not provided
+
+## Brand name casing
+
+**A new BrandName is always all lowercase** (`aicodingsummitlondon`, `techleadconflondon`), even
+when the user writes it in camelCase or other members of its family use mixed case.
+
+The BrandName becomes the build folder (`build/<BrandName>`), and the conference website proxies
+`/sponsors/*` to `https://sponsors.gitnation.org/<lowercase name>/`. A mixed-case name produces a
+folder the proxy never reaches.
+
+Do not rename existing mixed-case brands (`reactSummit`, `JSNation`, …) unless the user asks —
+their proxies already point at the current casing.
 
 ## How to get the Sanity ID
 The user needs to:
@@ -18,7 +30,7 @@ The user needs to:
 Two brands belong to the same family when only the **suffix** (city / region / edition) differs
 while the base name is identical — e.g. `aicodingsummit`, `aicodingsummitnyc`,
 `aicodingsummitberlin`, `aicodingsummitasia`, or `reactSummit`, `reactsummitus`,
-`reactsummitAsia`, or `techleadconf`, `techleadconfLondon`.
+`reactsummitAsia`, or `techleadconf`, `techleadconflondon`.
 
 Placement algorithm:
 1. Strip the suffix from the new BrandName to get its base (`aicodingsummitasia` → `aicodingsummit`).
